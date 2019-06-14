@@ -16,5 +16,10 @@ namespace ProjetoTStTeste
         {
             InitializeComponent();
         }
+
+        private void adicionarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

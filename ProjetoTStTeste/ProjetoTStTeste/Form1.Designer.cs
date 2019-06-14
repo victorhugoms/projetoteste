@@ -48,6 +48,7 @@
             this.adicionarPessoaToolStripMenuItem.Name = "adicionarPessoaToolStripMenuItem";
             this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(145, 20);
             this.adicionarPessoaToolStripMenuItem.Text = "Adicionar Funcionario...";
+            this.adicionarPessoaToolStripMenuItem.Click += new System.EventHandler(this.adicionarPessoaToolStripMenuItem_Click);
             // 
             // Form1
             // 
