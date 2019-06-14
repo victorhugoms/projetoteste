@@ -10,14 +10,11 @@ using System.Windows.Forms;
 
 namespace ProjetoTStTeste
 {
-    public partial class Pessoas : Form
+    public partial class EPI : Form
     {
-        public Pessoas()
+        public EPI()
         {
             InitializeComponent();
         }
-
-        
-
     }
 }

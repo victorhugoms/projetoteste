@@ -40,9 +40,9 @@
             this.dgvTelefone = new System.Windows.Forms.DataGridView();
             this.btnTelefone = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rdbFeminino = new System.Windows.Forms.RadioButton();
-            this.rdbNaodeclarado = new System.Windows.Forms.RadioButton();
             this.rdbMasculino = new System.Windows.Forms.RadioButton();
+            this.rdbNaodeclarado = new System.Windows.Forms.RadioButton();
+            this.rdbFeminino = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -60,16 +60,20 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rdbEmdia = new System.Windows.Forms.RadioButton();
-            this.rdbPendente = new System.Windows.Forms.RadioButton();
             this.btnExames = new System.Windows.Forms.Button();
+            this.rdbPendente = new System.Windows.Forms.RadioButton();
+            this.rdbEmdia = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
             this.cmbEscolaridade = new System.Windows.Forms.ComboBox();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -80,7 +84,6 @@
             this.label1.Size = new System.Drawing.Size(85, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome Completo:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -100,7 +103,7 @@
             // 
             // mskCpf
             // 
-            this.mskCpf.Location = new System.Drawing.Point(592, 6);
+            this.mskCpf.Location = new System.Drawing.Point(640, 6);
             this.mskCpf.Mask = "000.000.000-00";
             this.mskCpf.Name = "mskCpf";
             this.mskCpf.Size = new System.Drawing.Size(96, 20);
@@ -117,15 +120,15 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(47, 49);
+            this.txtEmail.Location = new System.Drawing.Point(93, 49);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(385, 20);
+            this.txtEmail.Size = new System.Drawing.Size(431, 20);
             this.txtEmail.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(465, 52);
+            this.label4.Location = new System.Drawing.Point(532, 52);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 6;
@@ -134,15 +137,15 @@
             // dtpNascimento
             // 
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(578, 46);
+            this.dtpNascimento.Location = new System.Drawing.Point(640, 46);
             this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(110, 20);
+            this.dtpNascimento.Size = new System.Drawing.Size(96, 20);
             this.dtpNascimento.TabIndex = 7;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(2, 103);
+            this.label5.Location = new System.Drawing.Point(2, 100);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 8;
@@ -151,14 +154,14 @@
             // dgvTelefone
             // 
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefone.Location = new System.Drawing.Point(65, 98);
+            this.dgvTelefone.Location = new System.Drawing.Point(93, 95);
             this.dgvTelefone.Name = "dgvTelefone";
             this.dgvTelefone.Size = new System.Drawing.Size(128, 21);
             this.dgvTelefone.TabIndex = 9;
             // 
             // btnTelefone
             // 
-            this.btnTelefone.Location = new System.Drawing.Point(199, 98);
+            this.btnTelefone.Location = new System.Drawing.Point(227, 95);
             this.btnTelefone.Name = "btnTelefone";
             this.btnTelefone.Size = new System.Drawing.Size(33, 23);
             this.btnTelefone.TabIndex = 10;
@@ -170,34 +173,12 @@
             this.groupBox1.Controls.Add(this.rdbMasculino);
             this.groupBox1.Controls.Add(this.rdbNaodeclarado);
             this.groupBox1.Controls.Add(this.rdbFeminino);
-            this.groupBox1.Location = new System.Drawing.Point(264, 75);
+            this.groupBox1.Location = new System.Drawing.Point(420, 75);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(375, 52);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sexo";
-            // 
-            // rdbFeminino
-            // 
-            this.rdbFeminino.AutoSize = true;
-            this.rdbFeminino.Location = new System.Drawing.Point(25, 20);
-            this.rdbFeminino.Name = "rdbFeminino";
-            this.rdbFeminino.Size = new System.Drawing.Size(67, 17);
-            this.rdbFeminino.TabIndex = 0;
-            this.rdbFeminino.TabStop = true;
-            this.rdbFeminino.Text = "Feminino";
-            this.rdbFeminino.UseVisualStyleBackColor = true;
-            // 
-            // rdbNaodeclarado
-            // 
-            this.rdbNaodeclarado.AutoSize = true;
-            this.rdbNaodeclarado.Location = new System.Drawing.Point(252, 19);
-            this.rdbNaodeclarado.Name = "rdbNaodeclarado";
-            this.rdbNaodeclarado.Size = new System.Drawing.Size(97, 17);
-            this.rdbNaodeclarado.TabIndex = 1;
-            this.rdbNaodeclarado.TabStop = true;
-            this.rdbNaodeclarado.Text = "Não Declarado";
-            this.rdbNaodeclarado.UseVisualStyleBackColor = true;
             // 
             // rdbMasculino
             // 
@@ -210,6 +191,28 @@
             this.rdbMasculino.Text = "Masculino";
             this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
+            // rdbNaodeclarado
+            // 
+            this.rdbNaodeclarado.AutoSize = true;
+            this.rdbNaodeclarado.Location = new System.Drawing.Point(252, 19);
+            this.rdbNaodeclarado.Name = "rdbNaodeclarado";
+            this.rdbNaodeclarado.Size = new System.Drawing.Size(97, 17);
+            this.rdbNaodeclarado.TabIndex = 1;
+            this.rdbNaodeclarado.TabStop = true;
+            this.rdbNaodeclarado.Text = "Não Declarado";
+            this.rdbNaodeclarado.UseVisualStyleBackColor = true;
+            // 
+            // rdbFeminino
+            // 
+            this.rdbFeminino.AutoSize = true;
+            this.rdbFeminino.Location = new System.Drawing.Point(25, 20);
+            this.rdbFeminino.Name = "rdbFeminino";
+            this.rdbFeminino.Size = new System.Drawing.Size(67, 17);
+            this.rdbFeminino.TabIndex = 0;
+            this.rdbFeminino.TabStop = true;
+            this.rdbFeminino.Text = "Feminino";
+            this.rdbFeminino.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -221,7 +224,7 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(65, 148);
+            this.txtEndereco.Location = new System.Drawing.Point(93, 148);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(346, 20);
             this.txtEndereco.TabIndex = 14;
@@ -229,7 +232,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(417, 151);
+            this.label7.Location = new System.Drawing.Point(556, 155);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 15;
@@ -237,7 +240,7 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(460, 148);
+            this.txtBairro.Location = new System.Drawing.Point(604, 148);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(144, 20);
             this.txtBairro.TabIndex = 16;
@@ -245,7 +248,7 @@
             // cmbEstado
             // 
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(65, 198);
+            this.cmbEstado.Location = new System.Drawing.Point(93, 201);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(76, 21);
             this.cmbEstado.TabIndex = 17;
@@ -253,7 +256,7 @@
             // cmbCidade
             // 
             this.cmbCidade.FormattingEnabled = true;
-            this.cmbCidade.Location = new System.Drawing.Point(212, 201);
+            this.cmbCidade.Location = new System.Drawing.Point(224, 201);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(144, 21);
             this.cmbCidade.TabIndex = 18;
@@ -261,7 +264,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 205);
+            this.label8.Location = new System.Drawing.Point(3, 204);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 19;
@@ -270,7 +273,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(163, 204);
+            this.label9.Location = new System.Drawing.Point(175, 205);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 20;
@@ -279,7 +282,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(380, 204);
+            this.label10.Location = new System.Drawing.Point(392, 205);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 21;
@@ -287,7 +290,7 @@
             // 
             // mskCep
             // 
-            this.mskCep.Location = new System.Drawing.Point(417, 201);
+            this.mskCep.Location = new System.Drawing.Point(429, 202);
             this.mskCep.Mask = "00000-999";
             this.mskCep.Name = "mskCep";
             this.mskCep.Size = new System.Drawing.Size(69, 20);
@@ -296,7 +299,7 @@
             // cmbCargo
             // 
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(65, 254);
+            this.cmbCargo.Location = new System.Drawing.Point(93, 254);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(144, 21);
             this.cmbCargo.TabIndex = 23;
@@ -304,7 +307,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(513, 206);
+            this.label11.Location = new System.Drawing.Point(525, 207);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(74, 13);
             this.label11.TabIndex = 24;
@@ -312,7 +315,7 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(592, 201);
+            this.txtComplemento.Location = new System.Drawing.Point(604, 202);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(144, 20);
             this.txtComplemento.TabIndex = 25;
@@ -329,7 +332,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(245, 261);
+            this.label13.Location = new System.Drawing.Point(273, 261);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(38, 13);
             this.label13.TabIndex = 27;
@@ -338,7 +341,7 @@
             // cmbTurno
             // 
             this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Location = new System.Drawing.Point(289, 254);
+            this.cmbTurno.Location = new System.Drawing.Point(317, 254);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(85, 21);
             this.cmbTurno.TabIndex = 28;
@@ -348,23 +351,21 @@
             this.groupBox2.Controls.Add(this.btnExames);
             this.groupBox2.Controls.Add(this.rdbPendente);
             this.groupBox2.Controls.Add(this.rdbEmdia);
-            this.groupBox2.Location = new System.Drawing.Point(19, 309);
+            this.groupBox2.Location = new System.Drawing.Point(490, 293);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(280, 48);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Exames";
             // 
-            // rdbEmdia
+            // btnExames
             // 
-            this.rdbEmdia.AutoSize = true;
-            this.rdbEmdia.Location = new System.Drawing.Point(7, 20);
-            this.rdbEmdia.Name = "rdbEmdia";
-            this.rdbEmdia.Size = new System.Drawing.Size(59, 17);
-            this.rdbEmdia.TabIndex = 0;
-            this.rdbEmdia.TabStop = true;
-            this.rdbEmdia.Text = "Em Dia";
-            this.rdbEmdia.UseVisualStyleBackColor = true;
+            this.btnExames.Location = new System.Drawing.Point(222, 17);
+            this.btnExames.Name = "btnExames";
+            this.btnExames.Size = new System.Drawing.Size(52, 23);
+            this.btnExames.TabIndex = 31;
+            this.btnExames.Text = "+";
+            this.btnExames.UseVisualStyleBackColor = true;
             // 
             // rdbPendente
             // 
@@ -377,19 +378,21 @@
             this.rdbPendente.Text = "Pendente";
             this.rdbPendente.UseVisualStyleBackColor = true;
             // 
-            // btnExames
+            // rdbEmdia
             // 
-            this.btnExames.Location = new System.Drawing.Point(222, 17);
-            this.btnExames.Name = "btnExames";
-            this.btnExames.Size = new System.Drawing.Size(52, 23);
-            this.btnExames.TabIndex = 31;
-            this.btnExames.Text = "+";
-            this.btnExames.UseVisualStyleBackColor = true;
+            this.rdbEmdia.AutoSize = true;
+            this.rdbEmdia.Location = new System.Drawing.Point(7, 20);
+            this.rdbEmdia.Name = "rdbEmdia";
+            this.rdbEmdia.Size = new System.Drawing.Size(59, 17);
+            this.rdbEmdia.TabIndex = 0;
+            this.rdbEmdia.TabStop = true;
+            this.rdbEmdia.Text = "Em Dia";
+            this.rdbEmdia.UseVisualStyleBackColor = true;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(400, 260);
+            this.label14.Location = new System.Drawing.Point(428, 260);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(71, 13);
             this.label14.TabIndex = 31;
@@ -398,7 +401,7 @@
             // cmbEscolaridade
             // 
             this.cmbEscolaridade.FormattingEnabled = true;
-            this.cmbEscolaridade.Location = new System.Drawing.Point(477, 254);
+            this.cmbEscolaridade.Location = new System.Drawing.Point(505, 254);
             this.cmbEscolaridade.Name = "cmbEscolaridade";
             this.cmbEscolaridade.Size = new System.Drawing.Size(85, 21);
             this.cmbEscolaridade.TabIndex = 32;
@@ -423,11 +426,40 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(19, 327);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(27, 13);
+            this.label15.TabIndex = 35;
+            this.label15.Text = "EPI:";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(52, 324);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(128, 21);
+            this.dataGridView1.TabIndex = 36;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(185, 322);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 23);
+            this.button1.TabIndex = 37;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // Pessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.label15);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.cmbEscolaridade);
@@ -468,6 +500,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -514,5 +547,8 @@
         private System.Windows.Forms.ComboBox cmbEscolaridade;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button button1;
     }
 }
