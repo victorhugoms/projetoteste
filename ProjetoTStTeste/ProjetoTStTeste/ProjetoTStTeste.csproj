@@ -58,6 +58,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Pessoa.cs" />
     <Compile Include="Pessoas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -72,6 +73,7 @@
     <Compile Include="Telefone.Designer.cs">
       <DependentUpon>Telefone.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telefones.cs" />
     <EmbeddedResource Include="EPI.resx">
       <DependentUpon>EPI.cs</DependentUpon>
     </EmbeddedResource>

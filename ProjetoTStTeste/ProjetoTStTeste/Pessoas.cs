@@ -12,13 +12,60 @@ namespace ProjetoTStTeste
 {
     public partial class Pessoas : Form
     {
+        
         public Pessoas()
         {
             InitializeComponent();
+            
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+
+            Pessoa pes = new Pessoa();
+            if (txtNome.Text != "") 
+            {
+               
+                pes.Nome = txtNome.Text;
+                pes.Email = txtEmail.Text;
+                pes.Cpf = mskCpf.Text;
+                pes.Nascimento = Convert.ToDateTime(dtpNascimento.Text);
+                pes.Endereco = txtEndereco.Text;
+                pes.Bairro = txtBairro.Text;
+                pes.Complemento = txtComplemento.Text;
+                pes.Cidade = cmbCidade.Text;
+                pes.Estado = cmbEstado.Text;
+                pes.Cep = mskCep.Text;
+                pes.Turno = cmbTurno.Text;
+                pes.Cargo = cmbCargo.Text;
+                pes.Escolaridade = cmbEscolaridade.Text;
+
+
+
+
+                if (rdbFeminino.Checked)
+                {
+                    pes.Sexo = 1;
+                }
+                else
+                {
+                    if (rdbMasculino.Checked)
+
+                        pes.Sexo = 2;
+
+                    else
+
+                        pes.Sexo = 3;
+                }
+
+            }
+
+           
+
+
+
+
+
 
         }
 
@@ -26,5 +73,7 @@ namespace ProjetoTStTeste
         {
             this.Close();
         }
+        
+        
     }
 }

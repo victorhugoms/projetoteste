@@ -16,5 +16,10 @@ namespace ProjetoTStTeste
         {
             InitializeComponent();
         }
+
+        private void Telefone_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

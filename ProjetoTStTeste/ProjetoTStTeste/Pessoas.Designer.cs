@@ -205,6 +205,7 @@
             // rdbFeminino
             // 
             this.rdbFeminino.AutoSize = true;
+            this.rdbFeminino.Checked = true;
             this.rdbFeminino.Location = new System.Drawing.Point(25, 20);
             this.rdbFeminino.Name = "rdbFeminino";
             this.rdbFeminino.Size = new System.Drawing.Size(67, 17);

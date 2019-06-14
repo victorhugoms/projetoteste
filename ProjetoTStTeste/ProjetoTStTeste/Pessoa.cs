@@ -11,7 +11,7 @@ namespace ProjetoTStTeste
         public Int32 Id             { private set; get; } 
         public String Nome          { set; get; }
         public String Cpf           { set; get; }
-        public String Sexo          { set; get; }
+        public Int16 Sexo          { set; get; }
         public DateTime Nascimento  { set; get; }
         public String Telefone      { set; get; }
         public String Email         { set; get; }
