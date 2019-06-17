@@ -8,6 +8,7 @@ namespace ProjetoTStTeste
 {
     class Telefones
     {
-
+        public String Tipo { get; set; }
+        public String numero { get; set; }
     }
 }

@@ -167,6 +167,7 @@
             this.btnTelefone.TabIndex = 10;
             this.btnTelefone.Text = "+";
             this.btnTelefone.UseVisualStyleBackColor = true;
+            this.btnTelefone.Click += new System.EventHandler(this.btnTelefone_Click);
             // 
             // groupBox1
             // 
@@ -410,7 +411,7 @@
             // btnSalvar
             // 
             this.btnSalvar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalvar.Location = new System.Drawing.Point(564, 415);
+            this.btnSalvar.Location = new System.Drawing.Point(542, 360);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(206, 23);
             this.btnSalvar.TabIndex = 33;
@@ -421,7 +422,7 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancelar.Location = new System.Drawing.Point(318, 415);
+            this.btnCancelar.Location = new System.Drawing.Point(317, 360);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(206, 23);
             this.btnCancelar.TabIndex = 34;
@@ -454,6 +455,7 @@
             this.button1.TabIndex = 37;
             this.button1.Text = "+";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Pessoas
             // 

@@ -28,30 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.combotipo = new System.Windows.Forms.ComboBox();
+            this.msknumero = new System.Windows.Forms.MaskedTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // comboBox1
+            // combotipo
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(74, 21);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 0;
+            this.combotipo.FormattingEnabled = true;
+            this.combotipo.Items.AddRange(new object[] {
+            "Celular",
+            "Telefone"});
+            this.combotipo.Location = new System.Drawing.Point(74, 21);
+            this.combotipo.Name = "combotipo";
+            this.combotipo.Size = new System.Drawing.Size(100, 21);
+            this.combotipo.TabIndex = 0;
             // 
-            // maskedTextBox1
+            // msknumero
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(74, 67);
-            this.maskedTextBox1.Mask = "(99) 00000-0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 1;
-            this.maskedTextBox1.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.msknumero.Location = new System.Drawing.Point(74, 67);
+            this.msknumero.Mask = "(99) 00000-0000";
+            this.msknumero.Name = "msknumero";
+            this.msknumero.Size = new System.Drawing.Size(100, 20);
+            this.msknumero.TabIndex = 1;
+            this.msknumero.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
             // 
             // label1
             // 
@@ -79,6 +82,7 @@
             this.button1.TabIndex = 4;
             this.button1.Text = "Salvar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -88,6 +92,7 @@
             this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Telefone
             // 
@@ -98,11 +103,10 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.maskedTextBox1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.msknumero);
+            this.Controls.Add(this.combotipo);
             this.Name = "Telefone";
             this.Text = "Telefone";
-            this.Load += new System.EventHandler(this.Telefone_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -110,8 +114,8 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.ComboBox combotipo;
+        private System.Windows.Forms.MaskedTextBox msknumero;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;

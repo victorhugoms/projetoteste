@@ -73,7 +73,18 @@ namespace ProjetoTStTeste
         {
             this.Close();
         }
-        
-        
+
+        private void btnTelefone_Click(object sender, EventArgs e)
+        {
+
+            Telefone addPro = new Telefone();
+            addPro.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            EPI epi = new EPI();
+            epi.Show();
+        }
     }
 }
