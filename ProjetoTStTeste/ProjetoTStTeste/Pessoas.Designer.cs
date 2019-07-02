@@ -343,6 +343,10 @@
             // cmbTurno
             // 
             this.cmbTurno.FormattingEnabled = true;
+            this.cmbTurno.Items.AddRange(new object[] {
+            "Manhã",
+            "Tarde",
+            "Noite"});
             this.cmbTurno.Location = new System.Drawing.Point(317, 254);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(85, 21);
@@ -403,6 +407,11 @@
             // cmbEscolaridade
             // 
             this.cmbEscolaridade.FormattingEnabled = true;
+            this.cmbEscolaridade.Items.AddRange(new object[] {
+            "Ensino Medio",
+            "Ensino Tecnico",
+            "Ensino Superior",
+            "Ensino Fundamental"});
             this.cmbEscolaridade.Location = new System.Drawing.Point(505, 254);
             this.cmbEscolaridade.Name = "cmbEscolaridade";
             this.cmbEscolaridade.Size = new System.Drawing.Size(85, 21);
