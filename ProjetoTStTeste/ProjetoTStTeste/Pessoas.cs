@@ -86,5 +86,10 @@ namespace ProjetoTStTeste
             EPI epi = new EPI();
             epi.Show();
         }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

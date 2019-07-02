@@ -8,7 +8,8 @@ using System.IO;
 using System.Windows.Forms;
 
 
-namespace ExemploBD
+
+namespace ProjetoTStTeste
 {
     class conectaBD 
     {

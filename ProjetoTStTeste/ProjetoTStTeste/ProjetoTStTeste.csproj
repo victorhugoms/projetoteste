@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="conectaBD.cs" />
     <Compile Include="EPI.cs">
       <SubType>Form</SubType>
     </Compile>
