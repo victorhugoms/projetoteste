@@ -9,9 +9,9 @@ using System.Globalization;
 
 namespace ProjetoTStTeste
 {
-    class Pessoa
+    public class Pessoa
     {
-        private Int32 idCliente;
+        private int idCliente;
         private String nome;
         private String cpf;
         private DateTime dt_Nascimento;
@@ -22,9 +22,10 @@ namespace ProjetoTStTeste
         private int id_Cidade;
         private int id_Estado;
         private String cep;
-        private String complemento;
-        private String turno;
+        private int id_turno;
         private int id_Profissao;
+        private int sexo;
+        private int id_epi;
 
         conectaBD BD = new conectaBD();
 
@@ -60,27 +61,27 @@ namespace ProjetoTStTeste
 
         public string Endereco
         {
-            get { return endereco;  }
+            get { return endereco; }
             set { endereco = value; }
-        
+
         }
 
         public string Bairro
         {
-            get { return bairro;  }
-            set { bairro = value;  }
+            get { return bairro; }
+            set { bairro = value; }
         }
 
         public int Telefone
         {
-            get { return id_Telefone;  }
+            get { return id_Telefone; }
             set { id_Telefone = value; }
         }
 
         public int Id_Cidade
         {
-            get { return id_Cidade;  }
-            set { id_Cidade = value;  }
+            get { return id_Cidade; }
+            set { id_Cidade = value; }
         }
 
         public string Cep
@@ -89,16 +90,10 @@ namespace ProjetoTStTeste
             set { cep = value; }
         }
 
-        public string Complemento
+        public int Id_Turno
         {
-            get { return complemento; }
-            set { complemento = value;  }
-        }
-
-        public string Turno
-        {
-            get { return turno; }
-            set { turno = value; }
+            get { return id_turno; }
+            set { id_turno = value; }
         }
 
         public int Id_Profissao
@@ -107,17 +102,36 @@ namespace ProjetoTStTeste
             set { id_Profissao = value; }
         }
 
+        public int Id_Estado
+        {
+            get { return id_Estado; }
+            set { id_Estado = value; }
+        }
+
+        public int Sexo
+        {
+            get { return sexo; }
+            set { sexo = value; }
+        }
+
+        public int Id_epi
+        {
+            get { return id_epi; }
+            set { id_epi = value; }
+        }
+
+
 
         public int Adicionar()
         {
             int id = 0;
             try
             {
-                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO CLIENTE (nome_funcionario,data_nascimento,endereco_funcionario," +
-                                                                  "id_estado,id_cidade,id_profissao,bairro_funcionario,cep_funcionario,cpf_funcionario,email_funcionario,turno) " +
-                                        " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')",
+                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO funcionario (nome_funcionario,data_nascimento,endereco_funcionario," +
+                                                                  "id_estado,id_cidade,id_profissao,bairro_funcionario,cep_funcionario,cpf_funcionario,email_funcionario,id_turno,id_epi) " +
+                                        " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}')",
                                                   nome, dt_Nascimento.ToShortDateString(), endereco,
-                                                  id_Estado, id_Cidade, id_Profissao, bairro, cep, cpf, email, turno) +
+                                                  id_Estado, id_Cidade, id_Profissao, bairro, cep, cpf, email,id_turno, id_epi) +
                                                   "; SELECT SCOPE_IDENTITY();";
 
                 BD.ExecutaComando(false, out id);
@@ -138,10 +152,78 @@ namespace ProjetoTStTeste
             }
 
             return id;
+        }
 
+        public DataTable ListaUf()
+        {
+            try
+            {
+                BD._sql = "SELECT ID_ESTADO, SIGLA FROM ESTADOS ORDER BY SIGLA";
 
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
 
+        public DataTable ListaCidade()
+        {
+            try
+            {
+                BD._sql = "SELECT ID_CIDADE, CIDADE FROM CIDADES WHERE ID_ESTADO = " + id_Estado.ToString() + " ORDER BY CIDADE";
+
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+                return null;
+            }
 
 
         }
+
+        public DataTable Turnolista()
+        {
+            try
+            {
+                BD._sql = "SELECT id_turno, Periodo FROM Turno";
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+
+                { return null; }
+            }
+        }
+
+        public DataTable Profissao1()
+        {
+            try
+            {
+                BD._sql = "SELECT id_profissao , cargo_profissao FROM profissao";
+                return BD.ExecutaSelect();
+            }
+            catch
+            {
+
+                { return null; }
+            }
+        }
+
+        public DataTable epi1()
+        {
+            try
+            {
+                BD._sql = "S";
+                return BD.ExecutaSelect();
+            }
+            catch
+            {
+
+                { return null; }
+            }
+        }
+    }
 }

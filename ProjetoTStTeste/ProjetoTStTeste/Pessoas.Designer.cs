@@ -54,8 +54,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtComplemento = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
@@ -66,7 +64,7 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.epi = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
@@ -252,6 +250,7 @@
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(76, 21);
             this.cmbEstado.TabIndex = 17;
+            this.cmbEstado.SelectedIndexChanged += new System.EventHandler(this.cmbEstado_SelectedIndexChanged);
             // 
             // cmbCidade
             // 
@@ -303,22 +302,7 @@
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(144, 21);
             this.cmbCargo.TabIndex = 23;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(519, 241);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(74, 13);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Complemento:";
-            // 
-            // txtComplemento
-            // 
-            this.txtComplemento.Location = new System.Drawing.Point(599, 238);
-            this.txtComplemento.Name = "txtComplemento";
-            this.txtComplemento.Size = new System.Drawing.Size(144, 20);
-            this.txtComplemento.TabIndex = 25;
+            this.cmbCargo.SelectedIndexChanged += new System.EventHandler(this.cmbCargo_SelectedIndexChanged);
             // 
             // label12
             // 
@@ -341,14 +325,11 @@
             // cmbTurno
             // 
             this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Items.AddRange(new object[] {
-            "Manhã",
-            "Tarde",
-            "Noite"});
             this.cmbTurno.Location = new System.Drawing.Point(318, 278);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(85, 21);
             this.cmbTurno.TabIndex = 28;
+            this.cmbTurno.SelectedIndexChanged += new System.EventHandler(this.cmbTurno_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -423,13 +404,13 @@
             this.label15.TabIndex = 35;
             this.label15.Text = "EPI:";
             // 
-            // listBox1
+            // epi
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(52, 322);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(120, 95);
-            this.listBox1.TabIndex = 38;
+            this.epi.FormattingEnabled = true;
+            this.epi.Location = new System.Drawing.Point(52, 322);
+            this.epi.Name = "epi";
+            this.epi.Size = new System.Drawing.Size(237, 95);
+            this.epi.TabIndex = 38;
             // 
             // textBox1
             // 
@@ -455,7 +436,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.epi);
             this.Controls.Add(this.rdbEmdia);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnCancelar);
@@ -464,8 +445,6 @@
             this.Controls.Add(this.cmbTurno);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.txtComplemento);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.cmbCargo);
             this.Controls.Add(this.mskCep);
             this.Controls.Add(this.label10);
@@ -491,6 +470,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Pessoas";
             this.Text = "Pessoa";
+            this.Load += new System.EventHandler(this.Pessoas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -529,8 +509,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.MaskedTextBox mskCep;
         private System.Windows.Forms.ComboBox cmbCargo;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbTurno;
@@ -541,7 +519,7 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox epi;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label16;
     }

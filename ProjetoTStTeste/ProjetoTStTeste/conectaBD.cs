@@ -40,7 +40,7 @@ namespace ProjetoTStTeste
         
         {
             StreamReader str = new StreamReader("conexao.ini");
-            _strConexao = str.ReadLine() + "Initial Catalog=TESTE;Persist Security Info=True;User ID=sa;Password=senac";
+            _strConexao = str.ReadLine() + "Initial Catalog=projeto_tst;Persist Security Info=True;User ID=sa;Password=senac";
             _conn = new SqlConnection(_strConexao);
             _comandoSQL = new SqlCommand();
             _comandoSQL.Connection = _conn;

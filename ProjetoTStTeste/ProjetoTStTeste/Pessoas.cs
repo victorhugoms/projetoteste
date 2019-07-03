@@ -29,17 +29,15 @@ namespace ProjetoTStTeste
                 pes.Nome = txtNome.Text;
                 pes.Email = txtEmail.Text;
                 pes.Cpf = mskCpf.Text;
-                pes.Nascimento = Convert.ToDateTime(dtpNascimento.Text);
+                pes.Dt_nascimento = Convert.ToDateTime(dtpNascimento.Text);
                 pes.Endereco = txtEndereco.Text;
                 pes.Bairro = txtBairro.Text;
-                pes.Complemento = txtComplemento.Text;
-                pes.Cidade = cmbCidade.Text;
-                pes.Estado = cmbEstado.Text;
+                pes.Id_Cidade = Convert.ToInt32(cmbCidade.Text);
+                pes.Id_Estado = Convert.ToInt32(cmbEstado.Text);
                 pes.Cep = mskCep.Text;
-                pes.Turno = cmbTurno.Text;
-                pes.Cargo = cmbCargo.Text;
-                pes.Escolaridade = cmbEscolaridade.Text;
-
+                pes.Id_Turno = Convert.ToInt32(cmbTurno.Text);
+                pes.Id_Profissao = Convert.ToInt32(cmbCargo.Text);
+                pes.Id_epi = Convert.ToInt32(epi.Text);
 
 
 
@@ -91,5 +89,54 @@ namespace ProjetoTStTeste
         {
 
         }
+
+        private void Pessoas_Load(object sender, EventArgs e)
+        {
+            Pessoa pessoas = new Pessoa();
+            cmbEstado.DisplayMember = "SIGLA";
+            cmbEstado.ValueMember = "ID_ESTADO";
+            cmbEstado.DataSource = pessoas.ListaUf();
+            cmbEstado.SelectedValue = 0;
+
+            cmbCargo.DisplayMember = "CARGO_PROFISSAO";
+            cmbCargo.ValueMember = "ID_PROFISSAO";
+            cmbCargo.DataSource = pessoas.Profissao1();
+            cmbCargo.SelectedValue = 0;
+
+            cmbTurno.DisplayMember = "periodo";
+            cmbTurno.ValueMember = "ID_TURNO";
+            cmbTurno.DataSource = pessoas.Turnolista();
+            cmbTurno.SelectedValue = 0;
+
+        }
+
+        private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cmbEstado.SelectedIndex >= 0)
+            {
+                Pessoa cliente = new Pessoa();
+                cliente.Id_Estado = Convert.ToInt16(cmbEstado.SelectedValue);
+                cmbCidade.DisplayMember = "CIDADE";
+                cmbCidade.ValueMember = "ID_CIDADE";
+                cmbCidade.DataSource = cliente.ListaCidade();
+                cmbCidade.SelectedValue = 0;
+            }
+        }
+
+        private void cmbTurno_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Pessoa pessoas = new Pessoa();
+            epi.DisplayMember = "descricao_epi, VALIDADE_EPI";
+            epi.ValueMember = "id_epi";
+            epi.DataSource = pessoas.epi1();
+            epi.SelectedValue = 0;
+        }
+
     }
+    
 }
