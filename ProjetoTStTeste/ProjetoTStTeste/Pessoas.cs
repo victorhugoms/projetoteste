@@ -23,49 +23,47 @@ namespace ProjetoTStTeste
         {
 
             Pessoa pes = new Pessoa();
-            if (txtNome.Text != "") 
-            {
-               
-                pes.Nome = txtNome.Text;
+
+                 pes.Nome = txtNome.Text;
                 pes.Email = txtEmail.Text;
-                pes.Cpf = mskCpf.Text;
+                pes.Cpf = txtCpf.Text;
                 pes.Dt_nascimento = Convert.ToDateTime(dtpNascimento.Text);
                 pes.Endereco = txtEndereco.Text;
                 pes.Bairro = txtBairro.Text;
                 pes.Id_Cidade = Convert.ToInt32(cmbCidade.Text);
                 pes.Id_Estado = Convert.ToInt32(cmbEstado.Text);
-                pes.Cep = mskCep.Text;
-                pes.Id_Turno = Convert.ToInt32(cmbTurno.Text);
-                pes.Id_Profissao = Convert.ToInt32(cmbCargo.Text);
-                pes.Id_epi = Convert.ToInt32(epi.Text);
+                pes.Cep = txtcep.Text;
+                pes.Id_Turno = Convert.ToInt32(cmbTurno.SelectedValue);
+                pes.Id_Profissao = Convert.ToInt32(cmbCargo.SelectedValue);
 
-
-
-                if (rdbFeminino.Checked)
+                if (txtId.Text == "")
                 {
-                    pes.Sexo = 1;
+                    txtId.Text = Convert.ToString(pes.Adicionar());
+                    if (dgvTelefone.Rows.Count > 0)
+                    {
+                        SalvaTelefones();
+                    }
                 }
                 else
                 {
-                    if (rdbMasculino.Checked)
+                   
+                }
+        }
 
-                        pes.Sexo = 2;
-
-                    else
-
-                        pes.Sexo = 3;
+            private void SalvaTelefones()
+            {
+                foreach (DataGridViewRow dataGridViewRow in dgvTelefone.Rows)
+                {
+                    Pessoa pes = new Pessoa();
+                    pes.IdCliente = Convert.ToInt32(txtId.Text);
+                    if (dataGridViewRow.Cells["Telefone"].Value != null)
+                    {
+                        pes.AdicionarTelefone(dataGridViewRow.Cells["Telefone"].Value.ToString(), dataGridViewRow.Cells["Tipo"].Value.ToString());
+                    }
                 }
 
             }
-
-           
-
-
-
-
-
-
-        }
+        
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -75,8 +73,7 @@ namespace ProjetoTStTeste
         private void btnTelefone_Click(object sender, EventArgs e)
         {
 
-            Telefone addPro = new Telefone();
-            addPro.Show();
+            pntelefone.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -93,6 +90,7 @@ namespace ProjetoTStTeste
         private void Pessoas_Load(object sender, EventArgs e)
         {
             Pessoa pessoas = new Pessoa();
+
             cmbEstado.DisplayMember = "SIGLA";
             cmbEstado.ValueMember = "ID_ESTADO";
             cmbEstado.DataSource = pessoas.ListaUf();
@@ -130,13 +128,50 @@ namespace ProjetoTStTeste
 
         private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Pessoa pessoas = new Pessoa();
-            epi.DisplayMember = "descricao_epi, VALIDADE_EPI";
-            epi.ValueMember = "id_epi";
-            epi.DataSource = pessoas.epi1();
-            epi.SelectedValue = 0;
+            profissao pro = new profissao();
+            pro.IdProfissao= Convert.ToInt32(cmbCargo.SelectedValue);
+            //Mapeia a origen dos dados, pegando o retorno do PesquisaPorNome, que será um Datatable
+            dgvEpi.DataSource = pro.PesquisaPorprofissao();
+            dgvEpi.AutoResizeColumns();
+           
+
         }
 
+        private void epi_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pntelefone.Visible = false;
+            DataGridViewRow row = (DataGridViewRow)dgvTelefone.Rows[0].Clone();
+            row.Cells[0].Value = txttel.Text;
+            row.Cells[1].Value = cmbTipo.Text;
+            dgvTelefone.Rows.Add(row);
+            txttel.Text = "";
+            cmbTipo.SelectedValue = 0;
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            dgvTelefone.Rows.Remove(dgvTelefone.CurrentRow);
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvEpi_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnExames_Click(object sender, EventArgs e)
+        {
+
+        }
     }
     
 }

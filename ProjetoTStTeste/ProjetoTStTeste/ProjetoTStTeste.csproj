@@ -66,6 +66,7 @@
     <Compile Include="Pessoas.Designer.cs">
       <DependentUpon>Pessoas.cs</DependentUpon>
     </Compile>
+    <Compile Include="profissao.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Telefone.cs">

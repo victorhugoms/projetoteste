@@ -114,12 +114,6 @@ namespace ProjetoTStTeste
             set { sexo = value; }
         }
 
-        public int Id_epi
-        {
-            get { return id_epi; }
-            set { id_epi = value; }
-        }
-
 
 
         public int Adicionar()
@@ -212,18 +206,52 @@ namespace ProjetoTStTeste
             }
         }
 
-        public DataTable epi1()
+        public int AdicionarTelefone(string fone, string tipo)
+        {
+            int id = 0;
+            try
+            {
+
+                BD._sql = String.Format(new CultureInfo("en-US"),
+                    "INSERT INTO TELEFONE (id_funcionario,numero_telefone,descricao_telefone) " +
+                    " values ({0},'{1}','{2}')",
+                    idCliente, fone, tipo) + "; SELECT SCOPE_IDENTITY();";
+
+                BD.ExecutaComando(false, out id);
+
+                if (id > 0)
+                {
+                    MessageBox.Show("Telefone cadastrado com sucesso!", "Cadastro com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar Telefone", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return id;
+
+        }
+        public DataTable PesquisaPorprofissao()
         {
             try
             {
-                BD._sql = "S";
+                BD._sql = "SELECT e.id_epi as ID, ep.descricao_epi " +
+                    "FROM profissao p JOIN epi_profissao e ON p.id_profissao = e.id_profissao " +
+                    "JOIN epi ep ON ep.id_epi = e.id_epi" +
+                     "WHERE e.id_profissao=" + Id_Profissao.ToString();
                 return BD.ExecutaSelect();
             }
-            catch
+            catch (Exception)
             {
-
-                { return null; }
             }
+
+            return null;
         }
+
     }
 }

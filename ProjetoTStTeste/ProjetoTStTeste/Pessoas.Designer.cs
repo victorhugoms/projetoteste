@@ -31,17 +31,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.mskCpf = new System.Windows.Forms.MaskedTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgvTelefone = new System.Windows.Forms.DataGridView();
             this.btnTelefone = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.rdbMasculino = new System.Windows.Forms.RadioButton();
-            this.rdbNaodeclarado = new System.Windows.Forms.RadioButton();
             this.rdbFeminino = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtEndereco = new System.Windows.Forms.TextBox();
@@ -52,7 +49,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.mskCep = new System.Windows.Forms.MaskedTextBox();
             this.cmbCargo = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -64,12 +60,26 @@
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label15 = new System.Windows.Forms.Label();
-            this.epi = new System.Windows.Forms.ListBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
+            this.dgvTelefone = new System.Windows.Forms.DataGridView();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pntelefone = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txttel = new System.Windows.Forms.TextBox();
+            this.cmbTipo = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtCpf = new System.Windows.Forms.TextBox();
+            this.txtcep = new System.Windows.Forms.TextBox();
+            this.dgvEpi = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
+            this.pntelefone.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEpi)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(581, 55);
+            this.label2.Location = new System.Drawing.Point(582, 51);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(30, 13);
             this.label2.TabIndex = 1;
@@ -96,14 +106,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(431, 20);
             this.txtNome.TabIndex = 2;
-            // 
-            // mskCpf
-            // 
-            this.mskCpf.Location = new System.Drawing.Point(617, 48);
-            this.mskCpf.Mask = "000.000.000-00";
-            this.mskCpf.Name = "mskCpf";
-            this.mskCpf.Size = new System.Drawing.Size(96, 20);
-            this.mskCpf.TabIndex = 3;
             // 
             // label3
             // 
@@ -124,7 +126,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(522, 97);
+            this.label4.Location = new System.Drawing.Point(522, 81);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 6;
@@ -133,7 +135,7 @@
             // dtpNascimento
             // 
             this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(640, 91);
+            this.dtpNascimento.Location = new System.Drawing.Point(635, 75);
             this.dtpNascimento.Name = "dtpNascimento";
             this.dtpNascimento.Size = new System.Drawing.Size(96, 20);
             this.dtpNascimento.TabIndex = 7;
@@ -141,23 +143,15 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(1, 157);
+            this.label5.Location = new System.Drawing.Point(369, 220);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Telefones:";
             // 
-            // dgvTelefone
-            // 
-            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTelefone.Location = new System.Drawing.Point(64, 157);
-            this.dgvTelefone.Name = "dgvTelefone";
-            this.dgvTelefone.Size = new System.Drawing.Size(128, 21);
-            this.dgvTelefone.TabIndex = 9;
-            // 
             // btnTelefone
             // 
-            this.btnTelefone.Location = new System.Drawing.Point(202, 155);
+            this.btnTelefone.Location = new System.Drawing.Point(692, 230);
             this.btnTelefone.Name = "btnTelefone";
             this.btnTelefone.Size = new System.Drawing.Size(33, 23);
             this.btnTelefone.TabIndex = 10;
@@ -168,11 +162,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rdbMasculino);
-            this.groupBox1.Controls.Add(this.rdbNaodeclarado);
             this.groupBox1.Controls.Add(this.rdbFeminino);
-            this.groupBox1.Location = new System.Drawing.Point(413, 126);
+            this.groupBox1.Location = new System.Drawing.Point(556, 110);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(375, 52);
+            this.groupBox1.Size = new System.Drawing.Size(216, 52);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sexo";
@@ -188,22 +181,11 @@
             this.rdbMasculino.Text = "Masculino";
             this.rdbMasculino.UseVisualStyleBackColor = true;
             // 
-            // rdbNaodeclarado
-            // 
-            this.rdbNaodeclarado.AutoSize = true;
-            this.rdbNaodeclarado.Location = new System.Drawing.Point(252, 19);
-            this.rdbNaodeclarado.Name = "rdbNaodeclarado";
-            this.rdbNaodeclarado.Size = new System.Drawing.Size(97, 17);
-            this.rdbNaodeclarado.TabIndex = 1;
-            this.rdbNaodeclarado.TabStop = true;
-            this.rdbNaodeclarado.Text = "Não Declarado";
-            this.rdbNaodeclarado.UseVisualStyleBackColor = true;
-            // 
             // rdbFeminino
             // 
             this.rdbFeminino.AutoSize = true;
             this.rdbFeminino.Checked = true;
-            this.rdbFeminino.Location = new System.Drawing.Point(25, 20);
+            this.rdbFeminino.Location = new System.Drawing.Point(16, 19);
             this.rdbFeminino.Name = "rdbFeminino";
             this.rdbFeminino.Size = new System.Drawing.Size(67, 17);
             this.rdbFeminino.TabIndex = 0;
@@ -214,7 +196,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(2, 198);
+            this.label6.Location = new System.Drawing.Point(1, 145);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 13;
@@ -222,7 +204,7 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(64, 195);
+            this.txtEndereco.Location = new System.Drawing.Point(63, 142);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(433, 20);
             this.txtEndereco.TabIndex = 14;
@@ -230,7 +212,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(556, 201);
+            this.label7.Location = new System.Drawing.Point(522, 181);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 15;
@@ -238,15 +220,16 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.Location = new System.Drawing.Point(599, 198);
+            this.txtBairro.Location = new System.Drawing.Point(572, 181);
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(144, 20);
             this.txtBairro.TabIndex = 16;
             // 
             // cmbEstado
             // 
+            this.cmbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEstado.FormattingEnabled = true;
-            this.cmbEstado.Location = new System.Drawing.Point(51, 233);
+            this.cmbEstado.Location = new System.Drawing.Point(52, 178);
             this.cmbEstado.Name = "cmbEstado";
             this.cmbEstado.Size = new System.Drawing.Size(76, 21);
             this.cmbEstado.TabIndex = 17;
@@ -254,8 +237,9 @@
             // 
             // cmbCidade
             // 
+            this.cmbCidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCidade.FormattingEnabled = true;
-            this.cmbCidade.Location = new System.Drawing.Point(202, 238);
+            this.cmbCidade.Location = new System.Drawing.Point(192, 178);
             this.cmbCidade.Name = "cmbCidade";
             this.cmbCidade.Size = new System.Drawing.Size(144, 21);
             this.cmbCidade.TabIndex = 18;
@@ -263,7 +247,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(2, 236);
+            this.label8.Location = new System.Drawing.Point(3, 181);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(43, 13);
             this.label8.TabIndex = 19;
@@ -272,7 +256,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(153, 241);
+            this.label9.Location = new System.Drawing.Point(143, 181);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 20;
@@ -281,24 +265,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(372, 241);
+            this.label10.Location = new System.Drawing.Point(353, 181);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "CEP:";
-            // 
-            // mskCep
-            // 
-            this.mskCep.Location = new System.Drawing.Point(409, 239);
-            this.mskCep.Mask = "00000-999";
-            this.mskCep.Name = "mskCep";
-            this.mskCep.Size = new System.Drawing.Size(69, 20);
-            this.mskCep.TabIndex = 22;
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // cmbCargo
             // 
+            this.cmbCargo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCargo.FormattingEnabled = true;
-            this.cmbCargo.Location = new System.Drawing.Point(63, 278);
+            this.cmbCargo.Location = new System.Drawing.Point(63, 217);
             this.cmbCargo.Name = "cmbCargo";
             this.cmbCargo.Size = new System.Drawing.Size(144, 21);
             this.cmbCargo.TabIndex = 23;
@@ -307,7 +285,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1, 284);
+            this.label12.Location = new System.Drawing.Point(1, 220);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(56, 13);
             this.label12.TabIndex = 26;
@@ -316,7 +294,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(274, 281);
+            this.label13.Location = new System.Drawing.Point(222, 220);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(38, 13);
             this.label13.TabIndex = 27;
@@ -324,8 +302,9 @@
             // 
             // cmbTurno
             // 
+            this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurno.FormattingEnabled = true;
-            this.cmbTurno.Location = new System.Drawing.Point(318, 278);
+            this.cmbTurno.Location = new System.Drawing.Point(266, 217);
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(85, 21);
             this.cmbTurno.TabIndex = 28;
@@ -335,7 +314,8 @@
             // 
             this.groupBox2.Controls.Add(this.btnExames);
             this.groupBox2.Controls.Add(this.rdbPendente);
-            this.groupBox2.Location = new System.Drawing.Point(482, 352);
+            this.groupBox2.Controls.Add(this.rdbEmdia);
+            this.groupBox2.Location = new System.Drawing.Point(413, 340);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(280, 48);
             this.groupBox2.TabIndex = 30;
@@ -350,6 +330,7 @@
             this.btnExames.TabIndex = 31;
             this.btnExames.Text = "+";
             this.btnExames.UseVisualStyleBackColor = true;
+            this.btnExames.Click += new System.EventHandler(this.btnExames_Click);
             // 
             // rdbPendente
             // 
@@ -365,7 +346,7 @@
             // rdbEmdia
             // 
             this.rdbEmdia.AutoSize = true;
-            this.rdbEmdia.Location = new System.Drawing.Point(505, 374);
+            this.rdbEmdia.Location = new System.Drawing.Point(38, 25);
             this.rdbEmdia.Name = "rdbEmdia";
             this.rdbEmdia.Size = new System.Drawing.Size(59, 17);
             this.rdbEmdia.TabIndex = 0;
@@ -398,26 +379,18 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(19, 327);
+            this.label15.Location = new System.Drawing.Point(12, 261);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(27, 13);
             this.label15.TabIndex = 35;
             this.label15.Text = "EPI:";
             // 
-            // epi
+            // txtId
             // 
-            this.epi.FormattingEnabled = true;
-            this.epi.Location = new System.Drawing.Point(52, 322);
-            this.epi.Name = "epi";
-            this.epi.Size = new System.Drawing.Size(237, 95);
-            this.epi.TabIndex = 38;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(31, 12);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(58, 20);
-            this.textBox1.TabIndex = 39;
+            this.txtId.Location = new System.Drawing.Point(31, 12);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(58, 20);
+            this.txtId.TabIndex = 39;
             // 
             // label16
             // 
@@ -429,15 +402,137 @@
             this.label16.Text = "ID :";
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
+            // dgvTelefone
+            // 
+            this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTelefone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Telefone,
+            this.Tipo});
+            this.dgvTelefone.Location = new System.Drawing.Point(432, 217);
+            this.dgvTelefone.Name = "dgvTelefone";
+            this.dgvTelefone.Size = new System.Drawing.Size(232, 104);
+            this.dgvTelefone.TabIndex = 41;
+            // 
+            // Telefone
+            // 
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            // 
+            // Tipo
+            // 
+            this.Tipo.HeaderText = "Tipo";
+            this.Tipo.Name = "Tipo";
+            // 
+            // pntelefone
+            // 
+            this.pntelefone.Controls.Add(this.button2);
+            this.pntelefone.Controls.Add(this.label14);
+            this.pntelefone.Controls.Add(this.label11);
+            this.pntelefone.Controls.Add(this.txttel);
+            this.pntelefone.Controls.Add(this.cmbTipo);
+            this.pntelefone.Location = new System.Drawing.Point(432, 214);
+            this.pntelefone.Name = "pntelefone";
+            this.pntelefone.Size = new System.Drawing.Size(246, 107);
+            this.pntelefone.TabIndex = 42;
+            this.pntelefone.Visible = false;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(21, 61);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Telefone";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(36, 19);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(28, 13);
+            this.label11.TabIndex = 2;
+            this.label11.Text = "Tipo";
+            // 
+            // txttel
+            // 
+            this.txttel.Location = new System.Drawing.Point(76, 58);
+            this.txttel.Name = "txttel";
+            this.txttel.Size = new System.Drawing.Size(121, 20);
+            this.txttel.TabIndex = 1;
+            // 
+            // cmbTipo
+            // 
+            this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTipo.FormattingEnabled = true;
+            this.cmbTipo.Items.AddRange(new object[] {
+            "Residencial",
+            "Celular",
+            "Recado",
+            "Fax",
+            "Comercial"});
+            this.cmbTipo.Location = new System.Drawing.Point(76, 16);
+            this.cmbTipo.Name = "cmbTipo";
+            this.cmbTipo.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipo.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(692, 272);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(33, 23);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "-";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(93, 81);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Salvar Telefone";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // txtCpf
+            // 
+            this.txtCpf.Location = new System.Drawing.Point(618, 48);
+            this.txtCpf.Name = "txtCpf";
+            this.txtCpf.Size = new System.Drawing.Size(113, 20);
+            this.txtCpf.TabIndex = 43;
+            // 
+            // txtcep
+            // 
+            this.txtcep.Location = new System.Drawing.Point(390, 178);
+            this.txtcep.Name = "txtcep";
+            this.txtcep.Size = new System.Drawing.Size(120, 20);
+            this.txtcep.TabIndex = 44;
+            // 
+            // dgvEpi
+            // 
+            this.dgvEpi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEpi.Location = new System.Drawing.Point(45, 261);
+            this.dgvEpi.Name = "dgvEpi";
+            this.dgvEpi.Size = new System.Drawing.Size(240, 150);
+            this.dgvEpi.TabIndex = 45;
+            this.dgvEpi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEpi_CellContentClick);
+            // 
             // Pessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvEpi);
+            this.Controls.Add(this.txtcep);
+            this.Controls.Add(this.txtCpf);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pntelefone);
+            this.Controls.Add(this.btnTelefone);
+            this.Controls.Add(this.dgvTelefone);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.epi);
-            this.Controls.Add(this.rdbEmdia);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
@@ -446,7 +541,6 @@
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cmbCargo);
-            this.Controls.Add(this.mskCep);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -457,25 +551,25 @@
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.btnTelefone);
-            this.Controls.Add(this.dgvTelefone);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtpNascimento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.mskCpf);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Pessoas";
             this.Text = "Pessoa";
             this.Load += new System.EventHandler(this.Pessoas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).EndInit();
+            this.pntelefone.ResumeLayout(false);
+            this.pntelefone.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEpi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,17 +580,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.MaskedTextBox mskCpf;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker dtpNascimento;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dgvTelefone;
         private System.Windows.Forms.Button btnTelefone;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton rdbMasculino;
-        private System.Windows.Forms.RadioButton rdbNaodeclarado;
         private System.Windows.Forms.RadioButton rdbFeminino;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtEndereco;
@@ -507,7 +598,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.MaskedTextBox mskCep;
         private System.Windows.Forms.ComboBox cmbCargo;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
@@ -519,8 +609,20 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ListBox epi;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.DataGridView dgvTelefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.Panel pntelefone;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txttel;
+        private System.Windows.Forms.ComboBox cmbTipo;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtCpf;
+        private System.Windows.Forms.TextBox txtcep;
+        private System.Windows.Forms.DataGridView dgvEpi;
     }
 }
