@@ -14,7 +14,7 @@ namespace ProjetoTStTeste
         private int idCliente;
         private String nome;
         private String cpf;
-        private DateTime dt_Nascimento;
+        private String dt_Nascimento;
         private int id_Telefone;
         private String email;
         private String endereco;
@@ -25,7 +25,6 @@ namespace ProjetoTStTeste
         private int id_turno;
         private int id_Profissao;
         private int sexo;
-        private int id_epi;
 
         conectaBD BD = new conectaBD();
 
@@ -47,7 +46,7 @@ namespace ProjetoTStTeste
             set { cpf = value; }
         }
 
-        public DateTime Dt_nascimento
+        public string Dt_nascimento
         {
             get { return dt_Nascimento; }
             set { dt_Nascimento = value; }
@@ -121,11 +120,9 @@ namespace ProjetoTStTeste
             int id = 0;
             try
             {
-                BD._sql = String.Format(new CultureInfo("en-US"), "INSERT INTO funcionario (nome_funcionario,data_nascimento,endereco_funcionario," +
-                                                                  "id_estado,id_cidade,id_profissao,bairro_funcionario,cep_funcionario,cpf_funcionario,email_funcionario,id_turno,id_epi) " +
-                                        " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}')",
-                                                  nome, dt_Nascimento.ToShortDateString(), endereco,
-                                                  id_Estado, id_Cidade, id_Profissao, bairro, cep, cpf, email,id_turno, id_epi) +
+                BD._sql = String.Format(new CultureInfo("en-US"), " INSERT INTO funcionario (nome_funcionario,id_profissao,id_estado,id_cidade,endereco_funcionario,cpf_funcionario ,cep_funcionario,bairro_funcionario,id_turno,email_funcionario,data_nascimento ) " +
+                                        " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}')",
+                                                  nome,id_Profissao,id_Estado, id_Cidade,endereco,cpf,cep,bairro,id_turno,email,dt_Nascimento) +
                                                   "; SELECT SCOPE_IDENTITY();";
 
                 BD.ExecutaComando(false, out id);

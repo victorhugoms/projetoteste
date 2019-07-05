@@ -34,7 +34,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpNascimento = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.btnTelefone = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -66,15 +65,16 @@
             this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pntelefone = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txttel = new System.Windows.Forms.TextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtcep = new System.Windows.Forms.TextBox();
             this.dgvEpi = new System.Windows.Forms.DataGridView();
+            this.txtdata = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
@@ -131,14 +131,6 @@
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Data de Nascimento:";
-            // 
-            // dtpNascimento
-            // 
-            this.dtpNascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNascimento.Location = new System.Drawing.Point(635, 75);
-            this.dtpNascimento.Name = "dtpNascimento";
-            this.dtpNascimento.Size = new System.Drawing.Size(96, 20);
-            this.dtpNascimento.TabIndex = 7;
             // 
             // label5
             // 
@@ -436,6 +428,16 @@
             this.pntelefone.TabIndex = 42;
             this.pntelefone.Visible = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(93, 81);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 4;
+            this.button2.Text = "Salvar Telefone";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -486,16 +488,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(93, 81);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 4;
-            this.button2.Text = "Salvar Telefone";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(618, 48);
@@ -519,11 +511,19 @@
             this.dgvEpi.TabIndex = 45;
             this.dgvEpi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEpi_CellContentClick);
             // 
+            // txtdata
+            // 
+            this.txtdata.Location = new System.Drawing.Point(635, 74);
+            this.txtdata.Name = "txtdata";
+            this.txtdata.Size = new System.Drawing.Size(100, 20);
+            this.txtdata.TabIndex = 46;
+            // 
             // Pessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.txtdata);
             this.Controls.Add(this.dgvEpi);
             this.Controls.Add(this.txtcep);
             this.Controls.Add(this.txtCpf);
@@ -552,7 +552,6 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dtpNascimento);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label3);
@@ -583,7 +582,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DateTimePicker dtpNascimento;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnTelefone;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -624,5 +622,6 @@
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.TextBox txtcep;
         private System.Windows.Forms.DataGridView dgvEpi;
+        private System.Windows.Forms.TextBox txtdata;
     }
 }

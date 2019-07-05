@@ -24,14 +24,14 @@ namespace ProjetoTStTeste
 
             Pessoa pes = new Pessoa();
 
-                 pes.Nome = txtNome.Text;
+                pes.Nome = txtNome.Text;
                 pes.Email = txtEmail.Text;
                 pes.Cpf = txtCpf.Text;
-                pes.Dt_nascimento = Convert.ToDateTime(dtpNascimento.Text);
+                pes.Dt_nascimento = txtdata.Text;
                 pes.Endereco = txtEndereco.Text;
                 pes.Bairro = txtBairro.Text;
-                pes.Id_Cidade = Convert.ToInt32(cmbCidade.Text);
-                pes.Id_Estado = Convert.ToInt32(cmbEstado.Text);
+                pes.Id_Cidade = Convert.ToInt32(cmbCidade.SelectedValue);
+                pes.Id_Estado = Convert.ToInt32(cmbEstado.SelectedValue);
                 pes.Cep = txtcep.Text;
                 pes.Id_Turno = Convert.ToInt32(cmbTurno.SelectedValue);
                 pes.Id_Profissao = Convert.ToInt32(cmbCargo.SelectedValue);
