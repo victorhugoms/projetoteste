@@ -30,6 +30,9 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarPessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adicionarFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,10 +48,35 @@
             // 
             // adicionarPessoaToolStripMenuItem
             // 
+            this.adicionarPessoaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adicionarFuncionarioToolStripMenuItem,
+            this.sairToolStripMenuItem,
+            this.pesquisaToolStripMenuItem});
             this.adicionarPessoaToolStripMenuItem.Name = "adicionarPessoaToolStripMenuItem";
-            this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(145, 20);
-            this.adicionarPessoaToolStripMenuItem.Text = "Adicionar Funcionario...";
+            this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.adicionarPessoaToolStripMenuItem.Text = "Menu";
             this.adicionarPessoaToolStripMenuItem.Click += new System.EventHandler(this.adicionarPessoaToolStripMenuItem_Click);
+            // 
+            // adicionarFuncionarioToolStripMenuItem
+            // 
+            this.adicionarFuncionarioToolStripMenuItem.Name = "adicionarFuncionarioToolStripMenuItem";
+            this.adicionarFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.adicionarFuncionarioToolStripMenuItem.Text = "Adicionar Funcionario...";
+            this.adicionarFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.adicionarFuncionarioToolStripMenuItem_Click);
+            // 
+            // sairToolStripMenuItem
+            // 
+            this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // pesquisaToolStripMenuItem
+            // 
+            this.pesquisaToolStripMenuItem.Name = "pesquisaToolStripMenuItem";
+            this.pesquisaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.pesquisaToolStripMenuItem.Text = "pesquisa";
+            this.pesquisaToolStripMenuItem.Click += new System.EventHandler(this.pesquisaToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -71,6 +99,9 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adicionarPessoaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adicionarFuncionarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesquisaToolStripMenuItem;
     }
 }
 

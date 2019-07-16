@@ -76,11 +76,7 @@ namespace ProjetoTStTeste
             pntelefone.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            EPI epi = new EPI();
-            epi.Show();
-        }
+       
 
         private void label16_Click(object sender, EventArgs e)
         {

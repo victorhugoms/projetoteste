@@ -19,10 +19,28 @@ namespace ProjetoTStTeste
 
         private void adicionarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+          
+        }
+
+        private void adicionarFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Pessoas addPro = new Pessoas();
             addPro.MdiParent = this; // esse aqui e para ativar o container, e so ir no layout e deixa mdicontainer true
             addPro.WindowState = FormWindowState.Maximized; // e para quando abrir a janela dentro do container ela abre maximizada
             addPro.Show();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pesquisaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            pesquisa ps = new pesquisa();
+            ps.MdiParent = this;
+            ps.WindowState = FormWindowState.Maximized;
+            ps.Show();
         }
     }
 }

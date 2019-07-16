@@ -249,6 +249,46 @@ namespace ProjetoTStTeste
 
             return null;
         }
+        public DataTable PesquisaPorNome(String nome_pesquisa)
+        {
+            try
+            {
+                BD._sql = "SELECT F.id_funcionario AS 'ID', F.nome_funcionario AS 'NOME', F.cpf_funcionario AS 'CPF',F.data_nascimento AS 'NASCIMENTO',  " +
+                            " F.endereco_funcionario AS 'ENDEREÇO',F.ID_CIDADE, F.ID_ESTADO, F.id_profissao  " +
+                        " FROM funcionario F  " +
+                            "  LEFT JOIN ESTADOS E ON F.ID_ESTADO = E.ID_ESTADO  " +
+                            "  LEFT JOIN CIDADES CID ON F.ID_CIDADE = CID.ID_CIDADE  " +
+                            " LEFT JOIN profissao P ON F.id_profissao = P.id_profissao " +
+                        "  WHERE F.nome_funcionario LIKE '%" + nome_pesquisa + "%'";
+
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
+        }
+        public DataTable Pesquisaepi()
+        {
+            try
+            {
+                BD._sql = " SELECT ep.descricao_epi  AS 'EPI' , ep.validade_ca_epi As 'Val' " +
+                            " from profissao P " +
+                            " JOIN epi_profissao e ON p.id_profissao = e.id_profissao " +
+                            " JOIN epi ep ON ep.id_epi = e.id_epi " +
+                            " WHERE e.id_profissao = " + id_Profissao.ToString();
+
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
+        }
+
+
 
     }
 }
