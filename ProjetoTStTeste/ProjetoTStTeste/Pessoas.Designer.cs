@@ -53,7 +53,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.cmbTurno = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnExames = new System.Windows.Forms.Button();
             this.rdbPendente = new System.Windows.Forms.RadioButton();
             this.rdbEmdia = new System.Windows.Forms.RadioButton();
             this.btnSalvar = new System.Windows.Forms.Button();
@@ -304,25 +303,14 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.btnExames);
             this.groupBox2.Controls.Add(this.rdbPendente);
             this.groupBox2.Controls.Add(this.rdbEmdia);
             this.groupBox2.Location = new System.Drawing.Point(413, 340);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(280, 48);
+            this.groupBox2.Size = new System.Drawing.Size(241, 48);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Exames";
-            // 
-            // btnExames
-            // 
-            this.btnExames.Location = new System.Drawing.Point(222, 19);
-            this.btnExames.Name = "btnExames";
-            this.btnExames.Size = new System.Drawing.Size(52, 23);
-            this.btnExames.TabIndex = 31;
-            this.btnExames.Text = "+";
-            this.btnExames.UseVisualStyleBackColor = true;
-            this.btnExames.Click += new System.EventHandler(this.btnExames_Click);
             // 
             // rdbPendente
             // 
@@ -331,13 +319,13 @@
             this.rdbPendente.Name = "rdbPendente";
             this.rdbPendente.Size = new System.Drawing.Size(71, 17);
             this.rdbPendente.TabIndex = 1;
-            this.rdbPendente.TabStop = true;
             this.rdbPendente.Text = "Pendente";
             this.rdbPendente.UseVisualStyleBackColor = true;
             // 
             // rdbEmdia
             // 
             this.rdbEmdia.AutoSize = true;
+            this.rdbEmdia.Checked = true;
             this.rdbEmdia.Location = new System.Drawing.Point(38, 25);
             this.rdbEmdia.Name = "rdbEmdia";
             this.rdbEmdia.Size = new System.Drawing.Size(59, 17);
@@ -522,6 +510,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.txtdata);
             this.Controls.Add(this.dgvEpi);
@@ -601,7 +590,6 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cmbTurno;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnExames;
         private System.Windows.Forms.RadioButton rdbPendente;
         private System.Windows.Forms.RadioButton rdbEmdia;
         private System.Windows.Forms.Button btnSalvar;

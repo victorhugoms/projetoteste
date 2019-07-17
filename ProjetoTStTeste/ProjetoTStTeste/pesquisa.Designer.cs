@@ -33,7 +33,7 @@
             this.dgvpesquisa = new System.Windows.Forms.DataGridView();
             this.btsair = new System.Windows.Forms.Button();
             this.dgvepii = new System.Windows.Forms.DataGridView();
-            this.btepi = new System.Windows.Forms.Button();
+            this.btnalterar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpesquisa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvepii)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +68,7 @@
             // 
             // btsair
             // 
-            this.btsair.Location = new System.Drawing.Point(674, 415);
+            this.btsair.Location = new System.Drawing.Point(655, 415);
             this.btsair.Name = "btsair";
             this.btsair.Size = new System.Drawing.Size(75, 23);
             this.btsair.TabIndex = 3;
@@ -84,28 +84,30 @@
             this.dgvepii.Size = new System.Drawing.Size(240, 150);
             this.dgvepii.TabIndex = 4;
             // 
-            // btepi
+            // btnalterar
             // 
-            this.btepi.Location = new System.Drawing.Point(674, 370);
-            this.btepi.Name = "btepi";
-            this.btepi.Size = new System.Drawing.Size(75, 23);
-            this.btepi.TabIndex = 5;
-            this.btepi.Text = "Epi";
-            this.btepi.UseVisualStyleBackColor = true;
-            this.btepi.Click += new System.EventHandler(this.btepi_Click);
+            this.btnalterar.Location = new System.Drawing.Point(555, 415);
+            this.btnalterar.Name = "btnalterar";
+            this.btnalterar.Size = new System.Drawing.Size(75, 23);
+            this.btnalterar.TabIndex = 5;
+            this.btnalterar.Text = "Alterar";
+            this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.Click += new System.EventHandler(this.btnalterar_Click);
             // 
             // pesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btepi);
+            this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.dgvepii);
             this.Controls.Add(this.btsair);
             this.Controls.Add(this.dgvpesquisa);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtpesquisa);
             this.Name = "pesquisa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
             this.Text = "pesquisa";
             ((System.ComponentModel.ISupportInitialize)(this.dgvpesquisa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvepii)).EndInit();
@@ -121,6 +123,6 @@
         private System.Windows.Forms.DataGridView dgvpesquisa;
         private System.Windows.Forms.Button btsair;
         private System.Windows.Forms.DataGridView dgvepii;
-        private System.Windows.Forms.Button btepi;
+        private System.Windows.Forms.Button btnalterar;
     }
 }

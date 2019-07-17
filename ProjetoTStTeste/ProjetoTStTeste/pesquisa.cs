@@ -10,12 +10,15 @@ using System.Windows.Forms;
 
 namespace ProjetoTStTeste
 {
+
     public partial class pesquisa : Form
     {
         public pesquisa()
         {
             InitializeComponent();
         }
+       
+   
 
         private void txtpesquisa_TextChanged(object sender, EventArgs e)
         {
@@ -59,5 +62,41 @@ namespace ProjetoTStTeste
             dgvepii.DataSource = pes.Pesquisaepi();
             dgvepii.AutoResizeColumns();
         }
+
+        private void btnalterar_Click(object sender, EventArgs e)
+        {
+            DataGridViewSelectedRowCollection linha = dgvpesquisa.SelectedRows;
+
+            if (linha.Count != 1)
+            {
+                MessageBox.Show("Selecione 1 cliente para editar", "Cliente não selecionado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            Pessoa pes = new Pessoa();
+            pes.IdCliente = Convert.ToInt32(linha[0].Cells[0].Value);
+            pes.Nome = linha[0].Cells[1].Value.ToString();
+            pes.Cpf = linha[0].Cells[2].Value.ToString();
+            pes.Dt_nascimento = Convert.ToDateTime(linha[0].Cells[3].Value.ToString());
+            pes.Endereco = linha[0].Cells[4].Value.ToString();
+            pes.Id_Profissao = Convert.ToInt32(linha[0].Cells[7].Value);
+
+            if (linha[0].Cells[5].Value.ToString() != "")
+            {
+                pes.Id_Cidade = Convert.ToInt32(linha[0].Cells[5].Value);
+            }
+
+            if (linha[0].Cells[6].Value.ToString() != "")
+            {
+                pes.Id_Estado = Convert.ToInt32(linha[0].Cells[6].Value);
+            }
+
+            Pessoas Cadastro = new Pessoas();
+            Cadastro.pessoa_carrega = pes;
+            Cadastro.ShowDialog();
+            txtpesquisa_TextChanged(sender, e);
+        }
+
     }
 }
