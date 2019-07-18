@@ -34,8 +34,10 @@
             this.btsair = new System.Windows.Forms.Button();
             this.dgvepii = new System.Windows.Forms.DataGridView();
             this.btnalterar = new System.Windows.Forms.Button();
+            this.dgvexame = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvpesquisa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvepii)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvexame)).BeginInit();
             this.SuspendLayout();
             // 
             // txtpesquisa
@@ -63,7 +65,6 @@
             this.dgvpesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvpesquisa.Size = new System.Drawing.Size(595, 198);
             this.dgvpesquisa.TabIndex = 2;
-            this.dgvpesquisa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvpesquisa_CellContentClick);
             this.dgvpesquisa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvpesquisa_MouseClick);
             // 
             // btsair
@@ -94,12 +95,21 @@
             this.btnalterar.UseVisualStyleBackColor = true;
             this.btnalterar.Click += new System.EventHandler(this.btnalterar_Click);
             // 
+            // dgvexame
+            // 
+            this.dgvexame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvexame.Location = new System.Drawing.Point(436, 288);
+            this.dgvexame.Name = "dgvexame";
+            this.dgvexame.Size = new System.Drawing.Size(240, 45);
+            this.dgvexame.TabIndex = 6;
+            // 
             // pesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvexame);
             this.Controls.Add(this.btnalterar);
             this.Controls.Add(this.dgvepii);
             this.Controls.Add(this.btsair);
@@ -111,6 +121,7 @@
             this.Text = "pesquisa";
             ((System.ComponentModel.ISupportInitialize)(this.dgvpesquisa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvepii)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvexame)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +135,6 @@
         private System.Windows.Forms.Button btsair;
         private System.Windows.Forms.DataGridView dgvepii;
         private System.Windows.Forms.Button btnalterar;
+        private System.Windows.Forms.DataGridView dgvexame;
     }
 }

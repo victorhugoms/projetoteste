@@ -75,7 +75,7 @@
             // 
             this.pesquisaToolStripMenuItem.Name = "pesquisaToolStripMenuItem";
             this.pesquisaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.pesquisaToolStripMenuItem.Text = "pesquisa";
+            this.pesquisaToolStripMenuItem.Text = "Pesquisar";
             this.pesquisaToolStripMenuItem.Click += new System.EventHandler(this.pesquisaToolStripMenuItem_Click);
             // 
             // Form1

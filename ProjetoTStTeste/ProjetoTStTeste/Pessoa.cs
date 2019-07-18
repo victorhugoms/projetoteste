@@ -25,6 +25,7 @@ namespace ProjetoTStTeste
         private int id_turno;
         private int id_Profissao;
         private String sexo;
+        private byte exame;
 
         conectaBD BD = new conectaBD();
 
@@ -117,6 +118,11 @@ namespace ProjetoTStTeste
             get { return sexo; }
             set { sexo = value; }
         }
+        public byte Exame
+        {
+            get { return exame; }
+            set { exame = value; }
+        }
 
 
 
@@ -125,9 +131,9 @@ namespace ProjetoTStTeste
             int id = 0;
             try
             {
-                BD._sql = String.Format(new CultureInfo("en-US"), " INSERT INTO funcionario (nome_funcionario,id_profissao,id_estado,id_cidade,endereco_funcionario,cpf_funcionario ,cep_funcionario,bairro_funcionario,id_turno,email_funcionario,data_nascimento,sexo ) " +
-                                        " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}' )",
-                                                  nome,id_Profissao,id_Estado, id_Cidade,endereco,cpf,cep,bairro,id_turno,email,dt_Nascimento.ToShortDateString(),Sexo) +
+                BD._sql = String.Format(new CultureInfo("en-US"), " INSERT INTO funcionario (nome_funcionario,id_profissao,id_estado,id_cidade,endereco_funcionario,cpf_funcionario ,cep_funcionario,bairro_funcionario,id_turno,email_funcionario,data_nascimento,sexo,exame  ) " +
+                                        " values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}','{12}'  )",
+                                                  nome,id_Profissao,id_Estado, id_Cidade,endereco,cpf,cep,bairro,id_turno,email,dt_Nascimento.ToShortDateString(),Sexo, Exame) +
                                                   "; SELECT SCOPE_IDENTITY();";
 
                 BD.ExecutaComando(false, out id);
@@ -291,6 +297,32 @@ namespace ProjetoTStTeste
             }
 
             return null;
+        }
+
+        public DataTable exames()
+        {
+            try
+            {
+                BD._sql = " SELECT exame AS 'EXAMES' " +
+                    " FROM funcionario " +
+                    " WHERE id_funcionario = " + idCliente.ToString();
+
+                return BD.ExecutaSelect();
+
+
+            }
+            catch
+            {
+
+
+
+            }
+            return null;
+
+
+
+
+
         }
 
 

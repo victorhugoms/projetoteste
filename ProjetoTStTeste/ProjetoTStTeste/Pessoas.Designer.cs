@@ -367,6 +367,7 @@
             // 
             // txtId
             // 
+            this.txtId.Enabled = false;
             this.txtId.Location = new System.Drawing.Point(31, 12);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(58, 20);
@@ -495,7 +496,7 @@
             this.dgvEpi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEpi.Location = new System.Drawing.Point(45, 261);
             this.dgvEpi.Name = "dgvEpi";
-            this.dgvEpi.Size = new System.Drawing.Size(240, 150);
+            this.dgvEpi.Size = new System.Drawing.Size(185, 150);
             this.dgvEpi.TabIndex = 45;
             this.dgvEpi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEpi_CellContentClick);
             // 
@@ -550,6 +551,7 @@
             this.Name = "Pessoas";
             this.Text = "Pessoa";
             this.Load += new System.EventHandler(this.Pessoas_Load);
+            this.Shown += new System.EventHandler(this.Pessoas_Shown);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

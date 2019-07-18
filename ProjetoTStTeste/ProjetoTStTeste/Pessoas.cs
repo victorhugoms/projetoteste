@@ -12,19 +12,21 @@ namespace ProjetoTStTeste
 {
     public partial class Pessoas : Form
     {
-        
+
         public Pessoas()
         {
             InitializeComponent();
-           
+
         }
 
         public Pessoa pessoa_carrega;
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (ValidaCPF(txtCpf.Text))
+            {
 
-            Pessoa pes = new Pessoa();
+                Pessoa pes = new Pessoa();
 
                 pes.Nome = txtNome.Text;
                 pes.Email = txtEmail.Text;
@@ -40,11 +42,20 @@ namespace ProjetoTStTeste
 
                 if (rdbFeminino.Checked)
                 {
-                pes.Sexo = "Feminino" ;
+                    pes.Sexo = "Feminino";
                 }
                 else
                 {
-                pes.Sexo = "Masculino";
+                    pes.Sexo = "Masculino";
+                }
+
+                if(rdbEmdia.Checked)
+                {
+                    pes.Exame = 1 ;
+                }
+                else
+                {
+                    pes.Exame = 0 ;
                 }
 
                 if (txtId.Text == "")
@@ -57,25 +68,30 @@ namespace ProjetoTStTeste
                 }
                 else
                 {
-                  pes.IdCliente = Convert.ToInt32(txtId.Text);
-                  pes.Atualizar();
+                    pes.IdCliente = Convert.ToInt32(txtId.Text);
+                    pes.Atualizar();
                 }
+            }
+            else
+            {
+                MessageBox.Show("CPF inválido!");
+            }
         }
 
-            private void SalvaTelefones()
+        private void SalvaTelefones()
+        {
+            foreach (DataGridViewRow dataGridViewRow in dgvTelefone.Rows)
             {
-                foreach (DataGridViewRow dataGridViewRow in dgvTelefone.Rows)
+                Pessoa pes = new Pessoa();
+                pes.IdCliente = Convert.ToInt32(txtId.Text);
+                if (dataGridViewRow.Cells["Telefone"].Value != null)
                 {
-                    Pessoa pes = new Pessoa();
-                    pes.IdCliente = Convert.ToInt32(txtId.Text);
-                    if (dataGridViewRow.Cells["Telefone"].Value != null)
-                    {
-                        pes.AdicionarTelefone(dataGridViewRow.Cells["Telefone"].Value.ToString(), dataGridViewRow.Cells["Tipo"].Value.ToString());
-                    }
+                    pes.AdicionarTelefone(dataGridViewRow.Cells["Telefone"].Value.ToString(), dataGridViewRow.Cells["Tipo"].Value.ToString());
                 }
-
             }
-        
+
+        }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -88,7 +104,7 @@ namespace ProjetoTStTeste
             pntelefone.Visible = true;
         }
 
-       
+
 
         private void label16_Click(object sender, EventArgs e)
         {
@@ -118,7 +134,7 @@ namespace ProjetoTStTeste
 
         private void cmbEstado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cmbEstado.SelectedIndex >= 0)
+            if (cmbEstado.SelectedIndex >= 0)
             {
                 Pessoa cliente = new Pessoa();
                 cliente.Id_Estado = Convert.ToInt16(cmbEstado.SelectedValue);
@@ -131,17 +147,17 @@ namespace ProjetoTStTeste
 
         private void cmbTurno_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
         {
             profissao pro = new profissao();
-            pro.IdProfissao= Convert.ToInt32(cmbCargo.SelectedValue);
+            pro.IdProfissao = Convert.ToInt32(cmbCargo.SelectedValue);
             //Mapeia a origen dos dados, pegando o retorno do PesquisaPorNome, que será um Datatable
             dgvEpi.DataSource = pro.PesquisaPorprofissao();
             dgvEpi.AutoResizeColumns();
-           
+
 
         }
 
@@ -194,7 +210,7 @@ namespace ProjetoTStTeste
                 txtBairro.Text = pessoa_carrega.Bairro;
                 txtcep.Text = pessoa_carrega.Cep;
                 txtEmail.Text = pessoa_carrega.Email;
-                
+
                 if (pessoa_carrega.Id_Estado != null)
                 {
                     cmbEstado.SelectedValue = pessoa_carrega.Id_Estado;
@@ -212,8 +228,73 @@ namespace ProjetoTStTeste
             }
         }
 
+        public bool ValidaCPF(string cpf)
 
+        {
+
+            int[] multiplicador1 = new int[9] { 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+
+            int[] multiplicador2 = new int[10] { 11, 10, 9, 8, 7, 6, 5, 4, 3, 2 };
+
+            string tempCpf;
+
+            string digito;
+
+            int soma;
+
+            int resto;
+
+            cpf = cpf.Trim();
+
+            cpf = cpf.Replace(".", "").Replace("-", "");
+
+            if (cpf.Length != 11)
+
+                return false;
+
+            tempCpf = cpf.Substring(0, 9);
+
+            soma = 0;
+
+            for (int i = 0; i < 9; i++)
+
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador1[i];
+
+            resto = soma % 11;
+
+            if (resto < 2)
+
+                resto = 0;
+
+            else
+
+                resto = 11 - resto;
+
+            digito = resto.ToString();
+
+            tempCpf = tempCpf + digito;
+
+            soma = 0;
+
+            for (int i = 0; i < 10; i++)
+
+                soma += int.Parse(tempCpf[i].ToString()) * multiplicador2[i];
+
+            resto = soma % 11;
+
+            if (resto < 2)
+
+                resto = 0;
+
+            else
+
+                resto = 11 - resto;
+
+            digito = digito + resto.ToString();
+
+            return cpf.EndsWith(digito);
+
+        }
 
     }
-    
 }

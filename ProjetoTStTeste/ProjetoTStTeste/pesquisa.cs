@@ -29,12 +29,6 @@ namespace ProjetoTStTeste
 
         }
 
-        private void dgvpesquisa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-
-        }
-
         private void btsair_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -61,6 +55,10 @@ namespace ProjetoTStTeste
             pes.Id_Profissao = Convert.ToInt32(linha[0].Cells[7].Value);
             dgvepii.DataSource = pes.Pesquisaepi();
             dgvepii.AutoResizeColumns();
+            pes.IdCliente = Convert.ToInt32(linha[0].Cells[0].Value);
+            dgvexame.DataSource = pes.exames();
+            dgvexame.AutoResizeColumns();
+
         }
 
         private void btnalterar_Click(object sender, EventArgs e)
