@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarPessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pesquisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pesquisaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,44 +51,49 @@
             // 
             this.adicionarPessoaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.adicionarFuncionarioToolStripMenuItem,
-            this.sairToolStripMenuItem,
-            this.pesquisaToolStripMenuItem});
+            this.pesquisarToolStripMenuItem,
+            this.sairToolStripMenuItem});
+            this.adicionarPessoaToolStripMenuItem.Image = global::ProjetoTStTeste.Properties.Resources.kappa;
             this.adicionarPessoaToolStripMenuItem.Name = "adicionarPessoaToolStripMenuItem";
-            this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.adicionarPessoaToolStripMenuItem.Text = "Menu";
-            this.adicionarPessoaToolStripMenuItem.Click += new System.EventHandler(this.adicionarPessoaToolStripMenuItem_Click);
             // 
             // adicionarFuncionarioToolStripMenuItem
             // 
             this.adicionarFuncionarioToolStripMenuItem.Name = "adicionarFuncionarioToolStripMenuItem";
-            this.adicionarFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.adicionarFuncionarioToolStripMenuItem.Text = "Adicionar Funcionario...";
+            this.adicionarFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.adicionarFuncionarioToolStripMenuItem.Text = "Adicionar Funcionario";
             this.adicionarFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.adicionarFuncionarioToolStripMenuItem_Click);
+            // 
+            // pesquisarToolStripMenuItem
+            // 
+            this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
+            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.pesquisarToolStripMenuItem.Text = "Pesquisar";
+            this.pesquisarToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.sairToolStripMenuItem.Text = "Sair";
-            this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
-            // 
-            // pesquisaToolStripMenuItem
-            // 
-            this.pesquisaToolStripMenuItem.Name = "pesquisaToolStripMenuItem";
-            this.pesquisaToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.pesquisaToolStripMenuItem.Text = "Pesquisar";
-            this.pesquisaToolStripMenuItem.Click += new System.EventHandler(this.pesquisaToolStripMenuItem_Click);
+            this.sairToolStripMenuItem.Click += new System.EventHandler(this.pesquisaToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(972, 567);
             this.Controls.Add(this.menuStrip1);
+            this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Menu Principal";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -100,8 +106,8 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adicionarPessoaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adicionarFuncionarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pesquisarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem pesquisaToolStripMenuItem;
     }
 }
 

@@ -17,11 +17,6 @@ namespace ProjetoTStTeste
             InitializeComponent();
         }
 
-        private void adicionarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-          
-        }
-
         private void adicionarFuncionarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Pessoas addPro = new Pessoas();
@@ -30,17 +25,19 @@ namespace ProjetoTStTeste
             addPro.Show();
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        private void pesquisaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void pesquisaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
         {
             pesquisa ps = new pesquisa();
             ps.MdiParent = this;
             ps.WindowState = FormWindowState.Maximized;
+
             ps.Show();
         }
+
     }
 }

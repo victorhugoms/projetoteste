@@ -84,11 +84,6 @@ namespace ProjetoTStTeste
             set { id_Cidade = value; }
         }
 
-        internal void Atualizar()
-        {
-            throw new NotImplementedException();
-        }
-
         public string Cep
         {
             get { return cep; }
@@ -265,7 +260,8 @@ namespace ProjetoTStTeste
             try
             {
                 BD._sql = "SELECT F.id_funcionario AS 'ID', F.nome_funcionario AS 'NOME', F.cpf_funcionario AS 'CPF',F.data_nascimento AS 'NASCIMENTO',  " +
-                            " F.endereco_funcionario AS 'ENDEREÇO',F.ID_CIDADE, F.ID_ESTADO, F.id_profissao  " +
+                            " F.endereco_funcionario AS 'ENDEREÇO', F.email_funcionario AS 'Email' ,CID.CIDADE AS 'Cidade', E.SIGLA as 'UF', F.id_profissao, P.cargo_profissao as 'Profissão',  " + 
+                            "  F.sexo, F.bairro_funcionario, F.cep_funcionario, f.ID_CIDADE, F.ID_ESTADO, F.exame " +
                         " FROM funcionario F  " +
                             "  LEFT JOIN ESTADOS E ON F.ID_ESTADO = E.ID_ESTADO  " +
                             "  LEFT JOIN CIDADES CID ON F.ID_CIDADE = CID.ID_CIDADE  " +
@@ -324,9 +320,59 @@ namespace ProjetoTStTeste
 
 
         }
+        public void Atualizar()
+        {
+            try
+            {
+                int exOK = 0;
 
+                BD._sql = String.Format(" UPDATE funcionario SET nome_funcionario  = '{0}' , endereco_funcionario = '{1}' , cep_funcionario = '{2}' , cpf_funcionario =  '{3}' , " +
+                    "  bairro_funcionario = '{4}' , id_profissao = '{5}' , email_funcionario = '{6}' , id_estado = '{7}', id_cidade = '{8}' , data_nascimento = '{9}' , id_turno = '{10}' , sexo = '{11}', exame = '{12}' " +
+                    " WHERE id_funcionario = '{13}' ", nome, endereco, cep, cpf, bairro, id_Profissao, email, id_Estado, id_Cidade, dt_Nascimento, id_turno, sexo, exame, idCliente);
 
+                exOK = BD.ExecutaComando(false);
 
+                if (exOK < 0) 
+                {
+                    MessageBox.Show("Erro ao atualizar cliente", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    MessageBox.Show("Cliente atualizado com sucesso!", "Atualizado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void Deletar()
+        {
+            try
+            {
+                int exOK = 0;
+                BD._sql = String.Format("DELETE FROM funcionario WHERE id_funcionario = {0}", idCliente);
+
+                exOK = BD.ExecutaComando(false);
+
+                if (exOK < 0)
+                {
+                    MessageBox.Show("Erro ao deletar Funcionario", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Funcionario deletado com sucesso!", "Deletado com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return;
+        }
 
 
     }

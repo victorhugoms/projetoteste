@@ -49,13 +49,13 @@ namespace ProjetoTStTeste
                     pes.Sexo = "Masculino";
                 }
 
-                if(rdbEmdia.Checked)
+                if (rdbEmdia.Checked)
                 {
-                    pes.Exame = 1 ;
+                    pes.Exame = 1;
                 }
                 else
                 {
-                    pes.Exame = 0 ;
+                    pes.Exame = 0;
                 }
 
                 if (txtId.Text == "")
@@ -293,6 +293,31 @@ namespace ProjetoTStTeste
             digito = digito + resto.ToString();
 
             return cpf.EndsWith(digito);
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtcep_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
 
         }
 
