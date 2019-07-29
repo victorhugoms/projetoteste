@@ -298,6 +298,9 @@
             // 
             // cmbTurno
             // 
+            this.cmbTurno.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbTurno.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbTurno.FormattingEnabled = true;
             this.cmbTurno.Location = new System.Drawing.Point(346, 299);
@@ -391,12 +394,15 @@
             // 
             // dgvTelefone
             // 
+            this.dgvTelefone.AllowUserToAddRows = false;
+            this.dgvTelefone.AllowUserToDeleteRows = false;
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTelefone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Telefone,
             this.Tipo});
             this.dgvTelefone.Location = new System.Drawing.Point(11, 227);
             this.dgvTelefone.Name = "dgvTelefone";
+            this.dgvTelefone.ReadOnly = true;
             this.dgvTelefone.Size = new System.Drawing.Size(232, 104);
             this.dgvTelefone.TabIndex = 41;
             // 
@@ -404,11 +410,13 @@
             // 
             this.Telefone.HeaderText = "Telefone";
             this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
             // 
             // Tipo
             // 
             this.Tipo.HeaderText = "Tipo";
             this.Tipo.Name = "Tipo";
+            this.Tipo.ReadOnly = true;
             // 
             // pntelefone
             // 
@@ -417,7 +425,7 @@
             this.pntelefone.Controls.Add(this.label11);
             this.pntelefone.Controls.Add(this.txttel);
             this.pntelefone.Controls.Add(this.cmbTipo);
-            this.pntelefone.Location = new System.Drawing.Point(9, 226);
+            this.pntelefone.Location = new System.Drawing.Point(6, 224);
             this.pntelefone.Name = "pntelefone";
             this.pntelefone.Size = new System.Drawing.Size(246, 107);
             this.pntelefone.TabIndex = 42;
@@ -556,7 +564,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Pessoas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pessoa";
             this.Load += new System.EventHandler(this.Pessoas_Load);
             this.Shown += new System.EventHandler(this.Pessoas_Shown);

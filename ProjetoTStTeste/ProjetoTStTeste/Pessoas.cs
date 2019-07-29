@@ -37,9 +37,11 @@ namespace ProjetoTStTeste
                 pes.Id_Cidade = Convert.ToInt32(cmbCidade.SelectedValue);
                 pes.Id_Estado = Convert.ToInt32(cmbEstado.SelectedValue);
                 pes.Cep = txtcep.Text;
-                pes.Id_Turno = Convert.ToInt32(cmbTurno.SelectedValue);
                 pes.Id_Profissao = Convert.ToInt32(cmbCargo.SelectedValue);
-
+                pes.Id_Turno = Convert.ToInt32(cmbTurno.SelectedValue);
+               
+               
+                
                 if (rdbFeminino.Checked)
                 {
                     pes.Sexo = "Feminino";
@@ -63,7 +65,10 @@ namespace ProjetoTStTeste
                     txtId.Text = Convert.ToString(pes.Adicionar());
                     if (dgvTelefone.Rows.Count > 0)
                     {
+                        
+                                 
                         SalvaTelefones();
+                        
                     }
                 }
                 else
@@ -76,6 +81,8 @@ namespace ProjetoTStTeste
             {
                 MessageBox.Show("CPF inválido!");
             }
+
+            this.Close();
         }
 
         private void SalvaTelefones()
@@ -129,6 +136,7 @@ namespace ProjetoTStTeste
             cmbTurno.ValueMember = "ID_TURNO";
             cmbTurno.DataSource = pessoas.Turnolista();
             cmbTurno.SelectedValue = 0;
+
 
         }
 
@@ -199,6 +207,7 @@ namespace ProjetoTStTeste
 
         private void Pessoas_Shown(object sender, EventArgs e)
         {
+           
             if (pessoa_carrega != null)
             {
                 txtId.Text = pessoa_carrega.IdCliente.ToString();
@@ -210,6 +219,8 @@ namespace ProjetoTStTeste
                 txtBairro.Text = pessoa_carrega.Bairro;
                 txtcep.Text = pessoa_carrega.Cep;
                 txtEmail.Text = pessoa_carrega.Email;
+               
+
 
                 if (pessoa_carrega.Id_Estado != null)
                 {
@@ -221,11 +232,36 @@ namespace ProjetoTStTeste
                     cmbCidade.SelectedValue = pessoa_carrega.Id_Cidade;
                 }
 
+                if(pessoa_carrega.Id_Profissao != null)
+                {
+                    cmbCargo.SelectedValue = pessoa_carrega.Id_Profissao;
+                }
+
+                if (pessoa_carrega.Id_Turno != null)
+                {
+                    cmbTurno.SelectedValue = pessoa_carrega.Id_Turno;
+                }
+                if (pessoa_carrega.IdCliente != null)
+                {
+                    dgvTelefone.Columns[0].Visible = false;
+                    dgvTelefone.Columns[1].Visible = false;
+                    dgvTelefone.DataSource = pessoa_carrega.Pesquisatelefone();
+                    dgvTelefone.AutoResizeColumns();
+                }
+               
+                
+
+
                 if (txtId.Text != "")
                 {
+                   
                     btnSalvar.Text = "Atualizar";
                 }
+
             }
+            
+
+
         }
 
         public bool ValidaCPF(string cpf)

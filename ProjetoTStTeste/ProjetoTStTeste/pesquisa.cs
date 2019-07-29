@@ -27,6 +27,7 @@ namespace ProjetoTStTeste
             dgvpesquisa.DataSource = pes.PesquisaPorNome(txtpesquisa.Text);
             dgvpesquisa.Columns[13].Visible = false;
             dgvpesquisa.Columns[14].Visible = false;
+            dgvpesquisa.Columns[16].Visible = false;
             dgvpesquisa.Columns[8].Visible = false;
             dgvpesquisa.AutoResizeColumns();
 
@@ -68,6 +69,7 @@ namespace ProjetoTStTeste
         private void btnalterar_Click(object sender, EventArgs e)
         {
             DataGridViewSelectedRowCollection linha = dgvpesquisa.SelectedRows;
+            
 
             if (linha.Count != 1)
             {
@@ -87,7 +89,7 @@ namespace ProjetoTStTeste
             pes.Sexo = linha[0].Cells[9].Value.ToString();
             pes.Bairro = linha[0].Cells[11].Value.ToString();
             pes.Cep = linha[0].Cells[12].Value.ToString();
-            pes.Exame = Convert.ToByte(linha[0].Cells[15].Value);
+            pes.Id_Turno = Convert.ToInt32(linha[0].Cells[16].Value);
 
 
 
@@ -99,6 +101,7 @@ namespace ProjetoTStTeste
             if (linha[0].Cells[13].Value.ToString() != "")
             {
                 pes.Id_Estado = Convert.ToInt32(linha[0].Cells[14].Value);
+
             }
 
             Pessoas Cadastro = new Pessoas();
@@ -120,6 +123,7 @@ namespace ProjetoTStTeste
                 {
                     Pessoa delete_cliente = new Pessoa();
                     delete_cliente.IdCliente = Convert.ToInt32(linha_selecionada[0].Cells[0].Value.ToString());
+                    delete_cliente.Deletartel();
                     delete_cliente.Deletar();
                     txtpesquisa_TextChanged(sender, e);
                 }

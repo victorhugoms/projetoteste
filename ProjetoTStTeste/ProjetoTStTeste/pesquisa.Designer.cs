@@ -61,9 +61,13 @@
             // 
             // dgvpesquisa
             // 
+            this.dgvpesquisa.AllowUserToAddRows = false;
+            this.dgvpesquisa.AllowUserToDeleteRows = false;
             this.dgvpesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvpesquisa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dgvpesquisa.Location = new System.Drawing.Point(91, 55);
             this.dgvpesquisa.Name = "dgvpesquisa";
+            this.dgvpesquisa.ReadOnly = true;
             this.dgvpesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvpesquisa.Size = new System.Drawing.Size(595, 173);
             this.dgvpesquisa.TabIndex = 2;
@@ -71,7 +75,7 @@
             // 
             // btsair
             // 
-            this.btsair.Location = new System.Drawing.Point(362, 415);
+            this.btsair.Location = new System.Drawing.Point(290, 415);
             this.btsair.Name = "btsair";
             this.btsair.Size = new System.Drawing.Size(138, 23);
             this.btsair.TabIndex = 3;
@@ -81,15 +85,18 @@
             // 
             // dgvepii
             // 
+            this.dgvepii.AllowUserToAddRows = false;
+            this.dgvepii.AllowUserToDeleteRows = false;
             this.dgvepii.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvepii.Location = new System.Drawing.Point(91, 234);
             this.dgvepii.Name = "dgvepii";
+            this.dgvepii.ReadOnly = true;
             this.dgvepii.Size = new System.Drawing.Size(265, 150);
             this.dgvepii.TabIndex = 4;
             // 
             // btnalterar
             // 
-            this.btnalterar.Location = new System.Drawing.Point(650, 415);
+            this.btnalterar.Location = new System.Drawing.Point(578, 415);
             this.btnalterar.Name = "btnalterar";
             this.btnalterar.Size = new System.Drawing.Size(138, 23);
             this.btnalterar.TabIndex = 5;
@@ -99,15 +106,19 @@
             // 
             // dgvexame
             // 
+            this.dgvexame.AllowUserToAddRows = false;
+            this.dgvexame.AllowUserToDeleteRows = false;
             this.dgvexame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvexame.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvexame.Location = new System.Drawing.Point(407, 234);
             this.dgvexame.Name = "dgvexame";
+            this.dgvexame.ReadOnly = true;
             this.dgvexame.Size = new System.Drawing.Size(279, 150);
             this.dgvexame.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(506, 415);
+            this.button1.Location = new System.Drawing.Point(434, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 23);
             this.button1.TabIndex = 7;
@@ -120,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(832, 461);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvexame);
             this.Controls.Add(this.btnalterar);
@@ -131,7 +142,8 @@
             this.Controls.Add(this.txtpesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "pesquisa";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisa";
             ((System.ComponentModel.ISupportInitialize)(this.dgvpesquisa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvepii)).EndInit();

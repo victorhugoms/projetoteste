@@ -261,11 +261,12 @@ namespace ProjetoTStTeste
             {
                 BD._sql = "SELECT F.id_funcionario AS 'ID', F.nome_funcionario AS 'NOME', F.cpf_funcionario AS 'CPF',F.data_nascimento AS 'NASCIMENTO',  " +
                             " F.endereco_funcionario AS 'ENDEREÇO', F.email_funcionario AS 'Email' ,CID.CIDADE AS 'Cidade', E.SIGLA as 'UF', F.id_profissao, P.cargo_profissao as 'Profissão',  " + 
-                            "  F.sexo, F.bairro_funcionario, F.cep_funcionario, f.ID_CIDADE, F.ID_ESTADO, F.exame " +
+                            "  F.sexo, F.bairro_funcionario, F.cep_funcionario, f.ID_CIDADE, F.ID_ESTADO, F.exame, F.id_turno, T.Periodo AS 'Turno'  " +
                         " FROM funcionario F  " +
                             "  LEFT JOIN ESTADOS E ON F.ID_ESTADO = E.ID_ESTADO  " +
                             "  LEFT JOIN CIDADES CID ON F.ID_CIDADE = CID.ID_CIDADE  " +
                             " LEFT JOIN profissao P ON F.id_profissao = P.id_profissao " +
+                            "  LEFT JOIN turno T ON f.id_turno = t.id_turno  " +
                         "  WHERE F.nome_funcionario LIKE '%" + nome_pesquisa + "%'";
 
                 return BD.ExecutaSelect();
@@ -372,6 +373,41 @@ namespace ProjetoTStTeste
                 MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             return;
+        }
+        public void Deletartel()
+        {
+            try
+            {
+                int exOK = 0;
+                BD._sql = String.Format("DELETE FROM telefone WHERE id_funcionario = {0}", idCliente);
+
+                exOK = BD.ExecutaComando(false);
+
+               
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return;
+        }
+
+        public DataTable Pesquisatelefone()
+        {
+            try
+            {
+                BD._sql = "SELECT numero_telefone AS 'Número' , descricao_telefone AS 'Tipo' " +
+                    " FROM telefone t " +
+                    " JOIN funcionario f ON f.id_funcionario = t.id_funcionario" +
+                     " WHERE f.id_funcionario = " + IdCliente;
+                return BD.ExecutaSelect();
+            }
+            catch (Exception)
+            {
+            }
+
+            return null;
         }
 
 
