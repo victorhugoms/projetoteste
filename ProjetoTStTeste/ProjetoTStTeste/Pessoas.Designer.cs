@@ -70,7 +70,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txttel = new System.Windows.Forms.TextBox();
             this.cmbTipo = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnremover = new System.Windows.Forms.Button();
             this.txtCpf = new System.Windows.Forms.TextBox();
             this.txtcep = new System.Windows.Forms.TextBox();
             this.dgvEpi = new System.Windows.Forms.DataGridView();
@@ -131,7 +131,6 @@
             this.label4.Size = new System.Drawing.Size(107, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Data de Nascimento:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -194,7 +193,6 @@
             this.label6.Size = new System.Drawing.Size(56, 13);
             this.label6.TabIndex = 13;
             this.label6.Text = "Endereço:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtEndereco
             // 
@@ -211,7 +209,6 @@
             this.label7.Size = new System.Drawing.Size(37, 13);
             this.label7.TabIndex = 15;
             this.label7.Text = "Bairro:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtBairro
             // 
@@ -265,7 +262,6 @@
             this.label10.Size = new System.Drawing.Size(31, 13);
             this.label10.TabIndex = 21;
             this.label10.Text = "CEP:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // cmbCargo
             // 
@@ -285,7 +281,6 @@
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 26;
             this.label12.Text = "Profissão:";
-            this.label12.Click += new System.EventHandler(this.label12_Click);
             // 
             // label13
             // 
@@ -307,7 +302,6 @@
             this.cmbTurno.Name = "cmbTurno";
             this.cmbTurno.Size = new System.Drawing.Size(144, 21);
             this.cmbTurno.TabIndex = 28;
-            this.cmbTurno.SelectedIndexChanged += new System.EventHandler(this.cmbTurno_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -390,12 +384,11 @@
             this.label16.Size = new System.Drawing.Size(24, 13);
             this.label16.TabIndex = 40;
             this.label16.Text = "ID :";
-            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // dgvTelefone
             // 
-            this.dgvTelefone.AllowUserToAddRows = false;
             this.dgvTelefone.AllowUserToDeleteRows = false;
+            this.dgvTelefone.AllowUserToOrderColumns = true;
             this.dgvTelefone.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTelefone.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Telefone,
@@ -403,6 +396,7 @@
             this.dgvTelefone.Location = new System.Drawing.Point(11, 227);
             this.dgvTelefone.Name = "dgvTelefone";
             this.dgvTelefone.ReadOnly = true;
+            this.dgvTelefone.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTelefone.Size = new System.Drawing.Size(232, 104);
             this.dgvTelefone.TabIndex = 41;
             // 
@@ -425,7 +419,7 @@
             this.pntelefone.Controls.Add(this.label11);
             this.pntelefone.Controls.Add(this.txttel);
             this.pntelefone.Controls.Add(this.cmbTipo);
-            this.pntelefone.Location = new System.Drawing.Point(6, 224);
+            this.pntelefone.Location = new System.Drawing.Point(5, 227);
             this.pntelefone.Name = "pntelefone";
             this.pntelefone.Size = new System.Drawing.Size(246, 107);
             this.pntelefone.TabIndex = 42;
@@ -481,15 +475,15 @@
             this.cmbTipo.Size = new System.Drawing.Size(121, 21);
             this.cmbTipo.TabIndex = 0;
             // 
-            // button1
+            // btnremover
             // 
-            this.button1.Location = new System.Drawing.Point(261, 277);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(33, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "-";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnremover.Location = new System.Drawing.Point(261, 277);
+            this.btnremover.Name = "btnremover";
+            this.btnremover.Size = new System.Drawing.Size(33, 23);
+            this.btnremover.TabIndex = 11;
+            this.btnremover.Text = "-";
+            this.btnremover.UseVisualStyleBackColor = true;
+            this.btnremover.Click += new System.EventHandler(this.btnremover_Click);
             // 
             // txtCpf
             // 
@@ -504,7 +498,6 @@
             this.txtcep.Name = "txtcep";
             this.txtcep.Size = new System.Drawing.Size(113, 20);
             this.txtcep.TabIndex = 44;
-            this.txtcep.TextChanged += new System.EventHandler(this.txtcep_TextChanged);
             // 
             // dgvEpi
             // 
@@ -513,7 +506,6 @@
             this.dgvEpi.Name = "dgvEpi";
             this.dgvEpi.Size = new System.Drawing.Size(185, 150);
             this.dgvEpi.TabIndex = 45;
-            this.dgvEpi.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEpi_CellContentClick);
             // 
             // txtdata
             // 
@@ -532,7 +524,7 @@
             this.Controls.Add(this.dgvEpi);
             this.Controls.Add(this.txtcep);
             this.Controls.Add(this.txtCpf);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnremover);
             this.Controls.Add(this.pntelefone);
             this.Controls.Add(this.btnTelefone);
             this.Controls.Add(this.dgvTelefone);
@@ -619,18 +611,18 @@
         private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dgvTelefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.Panel pntelefone;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txttel;
         private System.Windows.Forms.ComboBox cmbTipo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnremover;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtCpf;
         private System.Windows.Forms.TextBox txtcep;
         private System.Windows.Forms.DataGridView dgvEpi;
         private System.Windows.Forms.TextBox txtdata;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
     }
 }

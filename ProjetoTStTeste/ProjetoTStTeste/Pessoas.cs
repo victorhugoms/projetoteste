@@ -111,12 +111,7 @@ namespace ProjetoTStTeste
             pntelefone.Visible = true;
         }
 
-
-
-        private void label16_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Pessoas_Load(object sender, EventArgs e)
         {
@@ -153,10 +148,7 @@ namespace ProjetoTStTeste
             }
         }
 
-        private void cmbTurno_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void cmbCargo_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -168,42 +160,41 @@ namespace ProjetoTStTeste
 
 
         }
-
-        private void epi_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
-            pntelefone.Visible = false;
-            DataGridViewRow row = (DataGridViewRow)dgvTelefone.Rows[0].Clone();
-            row.Cells[0].Value = txttel.Text;
-            row.Cells[1].Value = cmbTipo.Text;
-            dgvTelefone.Rows.Add(row);
-            txttel.Text = "";
-            cmbTipo.SelectedValue = 0;
+            Pessoa pes = new Pessoa();
+
+            if (txtId.Text == "")
+            {
+                pntelefone.Visible = false;
+                DataGridViewRow row = (DataGridViewRow)dgvTelefone.Rows[0].Clone();
+                row.Cells[0].Value = txttel.Text;
+                row.Cells[1].Value = cmbTipo.Text;
+                dgvTelefone.Rows.Add(row);
+                txttel.Text = "";
+                cmbTipo.SelectedValue = 0;
+
+
+            }
+            else
+            {
+                DataGridViewSelectedRowCollection linha = dgvTelefone.SelectedRows;
+
+                Telefones tel = new Telefones();
+                linha[0].Cells[0].Value = txttel.Text;
+                linha[0].Cells[1].Value = cmbTipo.Text;
+                tel.Numero = linha[0].Cells[0].Value.ToString();
+                tel.Tipo = linha[0].Cells[1].Value.ToString();
+                tel.AdicionarTelefone();
+
+
+                pntelefone.Visible = false;
+                
+            }
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            dgvTelefone.Rows.Remove(dgvTelefone.CurrentRow);
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgvEpi_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void btnExames_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Pessoas_Shown(object sender, EventArgs e)
         {
@@ -219,6 +210,7 @@ namespace ProjetoTStTeste
                 txtBairro.Text = pessoa_carrega.Bairro;
                 txtcep.Text = pessoa_carrega.Cep;
                 txtEmail.Text = pessoa_carrega.Email;
+
                
 
 
@@ -247,7 +239,18 @@ namespace ProjetoTStTeste
                     dgvTelefone.Columns[1].Visible = false;
                     dgvTelefone.DataSource = pessoa_carrega.Pesquisatelefone();
                     dgvTelefone.AutoResizeColumns();
+                    dgvTelefone.Columns[4].Visible = false;
                 }
+                if (pessoa_carrega.Exame == 1)
+                {
+                    rdbEmdia.Checked = true;
+                }
+                else
+                {
+                    rdbPendente.Checked = true;
+                }
+
+                
                
                 
 
@@ -258,6 +261,10 @@ namespace ProjetoTStTeste
                     btnSalvar.Text = "Atualizar";
                 }
 
+                Pessoa pes = new Pessoa();
+                groupBox1.Visible = false;
+               
+                
             }
             
 
@@ -332,30 +339,16 @@ namespace ProjetoTStTeste
 
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btnremover_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection linha = dgvTelefone.SelectedRows;
 
+          
+            Telefones tel = new Telefones();
+            tel.Telefone = Convert.ToInt32(linha[0].Cells[4].Value);
+            tel.Deletartel2();
+            dgvTelefone.Rows.Remove(dgvTelefone.CurrentRow);
+            
         }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtcep_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label12_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

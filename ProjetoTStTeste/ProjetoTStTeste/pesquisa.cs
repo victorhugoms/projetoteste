@@ -29,6 +29,7 @@ namespace ProjetoTStTeste
             dgvpesquisa.Columns[14].Visible = false;
             dgvpesquisa.Columns[16].Visible = false;
             dgvpesquisa.Columns[8].Visible = false;
+            dgvpesquisa.Columns[0].Visible = false;
             dgvpesquisa.AutoResizeColumns();
 
         }
@@ -38,11 +39,7 @@ namespace ProjetoTStTeste
             this.Close();
         }
 
-        private void btepi_Click(object sender, EventArgs e)
-        {
-
-            
-        }
+       
 
         private void dgvpesquisa_MouseClick(object sender, MouseEventArgs e)
         {
@@ -86,10 +83,11 @@ namespace ProjetoTStTeste
             pes.Endereco = linha[0].Cells[4].Value.ToString();
             pes.Id_Profissao = Convert.ToInt32(linha[0].Cells[8].Value);
             pes.Email = linha[0].Cells[5].Value.ToString();
-            pes.Sexo = linha[0].Cells[9].Value.ToString();
             pes.Bairro = linha[0].Cells[11].Value.ToString();
             pes.Cep = linha[0].Cells[12].Value.ToString();
             pes.Id_Turno = Convert.ToInt32(linha[0].Cells[16].Value);
+
+            
 
 
 
@@ -104,10 +102,13 @@ namespace ProjetoTStTeste
 
             }
 
+
             Pessoas Cadastro = new Pessoas();
             Cadastro.pessoa_carrega = pes;
             Cadastro.ShowDialog();
             txtpesquisa_TextChanged(sender, e);
+            
+
         }
 
         private void button1_Click(object sender, EventArgs e)

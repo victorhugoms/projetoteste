@@ -15,7 +15,6 @@ namespace ProjetoTStTeste
         private String nome;
         private String cpf;
         private DateTime dt_Nascimento;
-        private int id_Telefone;
         private String email;
         private String endereco;
         private String bairro;
@@ -72,11 +71,7 @@ namespace ProjetoTStTeste
             set { bairro = value; }
         }
 
-        public int Telefone
-        {
-            get { return id_Telefone; }
-            set { id_Telefone = value; }
-        }
+        
 
         public int Id_Cidade
         {
@@ -328,8 +323,8 @@ namespace ProjetoTStTeste
                 int exOK = 0;
 
                 BD._sql = String.Format(" UPDATE funcionario SET nome_funcionario  = '{0}' , endereco_funcionario = '{1}' , cep_funcionario = '{2}' , cpf_funcionario =  '{3}' , " +
-                    "  bairro_funcionario = '{4}' , id_profissao = '{5}' , email_funcionario = '{6}' , id_estado = '{7}', id_cidade = '{8}' , data_nascimento = '{9}' , id_turno = '{10}' , sexo = '{11}', exame = '{12}' " +
-                    " WHERE id_funcionario = '{13}' ", nome, endereco, cep, cpf, bairro, id_Profissao, email, id_Estado, id_Cidade, dt_Nascimento, id_turno, sexo, exame, idCliente);
+                    "  bairro_funcionario = '{4}' , id_profissao = '{5}' , email_funcionario = '{6}' , id_estado = '{7}', id_cidade = '{8}' , data_nascimento = '{9}' , id_turno = '{10}' , exame = '{11}'  " +
+                    " WHERE id_funcionario = '{12}' ", nome, endereco, cep, cpf, bairro, id_Profissao, email, id_Estado, id_Cidade, dt_Nascimento, id_turno, exame, idCliente);
 
                 exOK = BD.ExecutaComando(false);
 
@@ -397,7 +392,7 @@ namespace ProjetoTStTeste
         {
             try
             {
-                BD._sql = "SELECT numero_telefone AS 'Número' , descricao_telefone AS 'Tipo' " +
+                BD._sql = "SELECT numero_telefone AS 'Telefone' , descricao_telefone AS 'Tipo', id_telefone " +
                     " FROM telefone t " +
                     " JOIN funcionario f ON f.id_funcionario = t.id_funcionario" +
                      " WHERE f.id_funcionario = " + IdCliente;
@@ -409,6 +404,7 @@ namespace ProjetoTStTeste
 
             return null;
         }
+       
 
 
     }
