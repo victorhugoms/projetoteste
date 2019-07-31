@@ -55,7 +55,7 @@ namespace ProjetoTStTeste
                 {
                     pes.Exame = 1;
                 }
-                else
+                if (rdbPendente.Checked)
                 {
                     pes.Exame = 0;
                 }
@@ -73,7 +73,7 @@ namespace ProjetoTStTeste
                 }
                 else
                 {
-                    pes.IdCliente = Convert.ToInt32(txtId.Text);
+                    pes.Id_Funcionario = Convert.ToInt32(txtId.Text);
                     pes.Atualizar();
                 }
             }
@@ -90,7 +90,7 @@ namespace ProjetoTStTeste
             foreach (DataGridViewRow dataGridViewRow in dgvTelefone.Rows)
             {
                 Pessoa pes = new Pessoa();
-                pes.IdCliente = Convert.ToInt32(txtId.Text);
+                pes.Id_Funcionario = Convert.ToInt32(txtId.Text);
                 if (dataGridViewRow.Cells["Telefone"].Value != null)
                 {
                     pes.AdicionarTelefone(dataGridViewRow.Cells["Telefone"].Value.ToString(), dataGridViewRow.Cells["Tipo"].Value.ToString());
@@ -139,11 +139,11 @@ namespace ProjetoTStTeste
         {
             if (cmbEstado.SelectedIndex >= 0)
             {
-                Pessoa cliente = new Pessoa();
-                cliente.Id_Estado = Convert.ToInt16(cmbEstado.SelectedValue);
+                Pessoa funcionario = new Pessoa();
+                funcionario.Id_Estado = Convert.ToInt16(cmbEstado.SelectedValue);
                 cmbCidade.DisplayMember = "CIDADE";
                 cmbCidade.ValueMember = "ID_CIDADE";
-                cmbCidade.DataSource = cliente.ListaCidade();
+                cmbCidade.DataSource = funcionario.ListaCidade();
                 cmbCidade.SelectedValue = 0;
             }
         }
@@ -166,6 +166,8 @@ namespace ProjetoTStTeste
         {
             Pessoa pes = new Pessoa();
 
+
+
             if (txtId.Text == "")
             {
                 pntelefone.Visible = false;
@@ -182,17 +184,22 @@ namespace ProjetoTStTeste
             {
                 DataGridViewSelectedRowCollection linha = dgvTelefone.SelectedRows;
 
+                
+
                 Telefones tel = new Telefones();
-                linha[0].Cells[0].Value = txttel.Text;
-                linha[0].Cells[1].Value = cmbTipo.Text;
-                tel.Numero = linha[0].Cells[0].Value.ToString();
-                tel.Tipo = linha[0].Cells[1].Value.ToString();
+                tel.Id_Funcionario = Convert.ToInt32(txtId.Text);
+                tel.Numero = txttel.Text;
+                tel.Tipo = cmbTipo.Text;
                 tel.AdicionarTelefone();
 
-
                 pntelefone.Visible = false;
-                
+                dgvTelefone.DataSource = pessoa_carrega.Pesquisatelefone();
+                dgvTelefone.AutoResizeColumns();
+
             }
+
+
+            
         }
 
 
@@ -201,7 +208,7 @@ namespace ProjetoTStTeste
            
             if (pessoa_carrega != null)
             {
-                txtId.Text = pessoa_carrega.IdCliente.ToString();
+                txtId.Text = pessoa_carrega.Id_Funcionario.ToString();
                 txtNome.Text = pessoa_carrega.Nome;
                 txtEmail.Text = pessoa_carrega.Email;
                 txtCpf.Text = pessoa_carrega.Cpf;
@@ -210,6 +217,7 @@ namespace ProjetoTStTeste
                 txtBairro.Text = pessoa_carrega.Bairro;
                 txtcep.Text = pessoa_carrega.Cep;
                 txtEmail.Text = pessoa_carrega.Email;
+
 
                
 
@@ -233,22 +241,22 @@ namespace ProjetoTStTeste
                 {
                     cmbTurno.SelectedValue = pessoa_carrega.Id_Turno;
                 }
-                if (pessoa_carrega.IdCliente != null)
+                if (pessoa_carrega.Id_Funcionario != null)
                 {
                     dgvTelefone.Columns[0].Visible = false;
                     dgvTelefone.Columns[1].Visible = false;
                     dgvTelefone.DataSource = pessoa_carrega.Pesquisatelefone();
                     dgvTelefone.AutoResizeColumns();
                     dgvTelefone.Columns[4].Visible = false;
+
+                    
                 }
-                if (pessoa_carrega.Exame == 1)
-                {
-                    rdbEmdia.Checked = true;
-                }
-                else
+                if (pessoa_carrega.Exame == 0)
                 {
                     rdbPendente.Checked = true;
                 }
+                
+                    
 
                 
                

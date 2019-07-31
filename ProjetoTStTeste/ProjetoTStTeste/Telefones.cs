@@ -9,7 +9,7 @@ using System.Globalization;
 
 namespace ProjetoTStTeste
 {
-    class Telefones
+    class Telefones : Pessoa
     {
         private String tipo;
         private string numero; 
@@ -32,7 +32,7 @@ namespace ProjetoTStTeste
         }
 
 
-        Pessoa pes = new Pessoa();
+       
 
         conectaBD BD = new conectaBD();
 
@@ -61,18 +61,18 @@ namespace ProjetoTStTeste
 
         public int AdicionarTelefone()
         {
-            int id = 0;
+            int exOK = 0;
             try
             {
 
                 BD._sql = String.Format(new CultureInfo("en-US"),
                     "INSERT INTO TELEFONE (id_funcionario,numero_telefone,descricao_telefone) " +
                     " values ({0},'{1}','{2}')",
-                    pes.IdCliente, numero, Tipo) + "; SELECT SCOPE_IDENTITY();";
+                    Id_Funcionario, numero, Tipo) + "; SELECT SCOPE_IDENTITY();";
 
-                BD.ExecutaComando(false, out id);
+                BD.ExecutaComando(false, out exOK);
 
-                if (id > 0)
+                if (exOK > 0)
                 {
                     MessageBox.Show("Telefone cadastrado com sucesso!", "Cadastro com sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -86,7 +86,7 @@ namespace ProjetoTStTeste
                 MessageBox.Show("Erro.: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
-            return id;
+            return exOK;
 
         }
 

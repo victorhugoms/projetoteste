@@ -419,7 +419,7 @@
             this.pntelefone.Controls.Add(this.label11);
             this.pntelefone.Controls.Add(this.txttel);
             this.pntelefone.Controls.Add(this.cmbTipo);
-            this.pntelefone.Location = new System.Drawing.Point(5, 227);
+            this.pntelefone.Location = new System.Drawing.Point(6, 224);
             this.pntelefone.Name = "pntelefone";
             this.pntelefone.Size = new System.Drawing.Size(246, 107);
             this.pntelefone.TabIndex = 42;
@@ -501,9 +501,12 @@
             // 
             // dgvEpi
             // 
+            this.dgvEpi.AllowUserToAddRows = false;
+            this.dgvEpi.AllowUserToDeleteRows = false;
             this.dgvEpi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEpi.Location = new System.Drawing.Point(509, 210);
             this.dgvEpi.Name = "dgvEpi";
+            this.dgvEpi.ReadOnly = true;
             this.dgvEpi.Size = new System.Drawing.Size(185, 150);
             this.dgvEpi.TabIndex = 45;
             // 

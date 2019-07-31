@@ -115,6 +115,7 @@
             this.dgvexame.ReadOnly = true;
             this.dgvexame.Size = new System.Drawing.Size(279, 150);
             this.dgvexame.TabIndex = 6;
+            this.dgvexame.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvexame_CellContentClick);
             // 
             // button1
             // 
@@ -141,6 +142,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtpesquisa);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "pesquisa";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
