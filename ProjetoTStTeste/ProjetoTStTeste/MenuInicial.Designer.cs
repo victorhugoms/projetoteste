@@ -1,6 +1,6 @@
 ﻿namespace ProjetoTStTeste
 {
-    partial class Form1
+    partial class MenuInicial
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuInicial));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adicionarPessoaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adicionarFuncionarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pesquisarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtAdm = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -43,7 +44,7 @@
             this.adicionarPessoaToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(972, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(954, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -53,51 +54,62 @@
             this.adicionarFuncionarioToolStripMenuItem,
             this.pesquisarToolStripMenuItem,
             this.sairToolStripMenuItem});
-            this.adicionarPessoaToolStripMenuItem.Image = global::ProjetoTStTeste.Properties.Resources.kappa;
             this.adicionarPessoaToolStripMenuItem.Name = "adicionarPessoaToolStripMenuItem";
-            this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
+            this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.adicionarPessoaToolStripMenuItem.Text = "Menu";
             // 
             // adicionarFuncionarioToolStripMenuItem
             // 
+            this.adicionarFuncionarioToolStripMenuItem.Enabled = false;
+            this.adicionarFuncionarioToolStripMenuItem.Image = global::ProjetoTStTeste.Properties.Resources.Add_User_icon;
             this.adicionarFuncionarioToolStripMenuItem.Name = "adicionarFuncionarioToolStripMenuItem";
-            this.adicionarFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
-            this.adicionarFuncionarioToolStripMenuItem.Text = "Adicionar Funcionario";
+            this.adicionarFuncionarioToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.adicionarFuncionarioToolStripMenuItem.Text = "Cadastrar Funcionário";
+            this.adicionarFuncionarioToolStripMenuItem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.adicionarFuncionarioToolStripMenuItem.Click += new System.EventHandler(this.adicionarFuncionarioToolStripMenuItem_Click);
             // 
             // pesquisarToolStripMenuItem
             // 
+            this.pesquisarToolStripMenuItem.Image = global::ProjetoTStTeste.Properties.Resources.Search_icon;
             this.pesquisarToolStripMenuItem.Name = "pesquisarToolStripMenuItem";
-            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.pesquisarToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.pesquisarToolStripMenuItem.Text = "Pesquisar";
             this.pesquisarToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
             // sairToolStripMenuItem
             // 
+            this.sairToolStripMenuItem.Image = global::ProjetoTStTeste.Properties.Resources.Close_icon;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
-            this.sairToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.sairToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
             this.sairToolStripMenuItem.Text = "Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.pesquisaToolStripMenuItem_Click);
             // 
-            // Form1
+            // txtAdm
+            // 
+            this.txtAdm.Location = new System.Drawing.Point(768, 105);
+            this.txtAdm.Name = "txtAdm";
+            this.txtAdm.Size = new System.Drawing.Size(100, 20);
+            this.txtAdm.TabIndex = 1;
+            this.txtAdm.Visible = false;
+            // 
+            // MenuInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.BackgroundImage = global::ProjetoTStTeste.Properties.Resources.segtrabalho;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(972, 567);
+            this.ClientSize = new System.Drawing.Size(954, 621);
+            this.Controls.Add(this.txtAdm);
             this.Controls.Add(this.menuStrip1);
             this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "MenuInicial";
             this.Text = "Menu Principal";
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.Shown += new System.EventHandler(this.MenuInicial_Shown);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -112,6 +124,7 @@
         private System.Windows.Forms.ToolStripMenuItem adicionarFuncionarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pesquisarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtAdm;
     }
 }
 

@@ -65,6 +65,7 @@ namespace ProjetoTStTeste
 
         private void btnalterar_Click(object sender, EventArgs e)
         {
+
             DataGridViewSelectedRowCollection linha = dgvpesquisa.SelectedRows;
             
 
@@ -88,7 +89,7 @@ namespace ProjetoTStTeste
             pes.Id_Turno = Convert.ToInt32(linha[0].Cells[16].Value);
             pes.Exame = Convert.ToByte(linha[0].Cells[15].Value);
 
-            
+
 
 
 
@@ -104,7 +105,7 @@ namespace ProjetoTStTeste
             }
 
 
-            Pessoas Cadastro = new Pessoas();
+            Cadastro Cadastro = new Cadastro();
             Cadastro.pessoa_carrega = pes;
             Cadastro.ShowDialog();
             txtpesquisa_TextChanged(sender, e);
@@ -123,11 +124,18 @@ namespace ProjetoTStTeste
                 }
                 else
                 {
-                    Pessoa delete_funcionario = new Pessoa();
-                    delete_funcionario.Id_Funcionario = Convert.ToInt32(linha_selecionada[0].Cells[0].Value.ToString());
-                    delete_funcionario.Deletartel();
-                    delete_funcionario.Deletar();
-                    txtpesquisa_TextChanged(sender, e);
+                    DialogResult resultado = MessageBox.Show("Você tem certeza que quer deletar o Funcionario", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if ( resultado == DialogResult.Yes)
+
+                    {
+                        Pessoa delete_funcionario = new Pessoa();
+                        delete_funcionario.Id_Funcionario = Convert.ToInt32(linha_selecionada[0].Cells[0].Value.ToString());
+                        delete_funcionario.Deletartel();
+                        delete_funcionario.Deletar();
+                        txtpesquisa_TextChanged(sender, e);
+                    }
+                   
                 }
             }
         }

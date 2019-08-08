@@ -63,54 +63,59 @@
             // 
             this.dgvpesquisa.AllowUserToAddRows = false;
             this.dgvpesquisa.AllowUserToDeleteRows = false;
+            this.dgvpesquisa.BackgroundColor = System.Drawing.Color.White;
             this.dgvpesquisa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvpesquisa.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dgvpesquisa.Location = new System.Drawing.Point(91, 55);
+            this.dgvpesquisa.Location = new System.Drawing.Point(15, 55);
             this.dgvpesquisa.Name = "dgvpesquisa";
             this.dgvpesquisa.ReadOnly = true;
             this.dgvpesquisa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvpesquisa.Size = new System.Drawing.Size(595, 173);
+            this.dgvpesquisa.Size = new System.Drawing.Size(687, 173);
             this.dgvpesquisa.TabIndex = 2;
             this.dgvpesquisa.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvpesquisa_MouseClick);
             // 
             // btsair
             // 
-            this.btsair.Location = new System.Drawing.Point(290, 415);
+            this.btsair.BackColor = System.Drawing.Color.White;
+            this.btsair.Location = new System.Drawing.Point(426, 415);
             this.btsair.Name = "btsair";
-            this.btsair.Size = new System.Drawing.Size(138, 23);
+            this.btsair.Size = new System.Drawing.Size(135, 23);
             this.btsair.TabIndex = 3;
             this.btsair.Text = "Sair";
-            this.btsair.UseVisualStyleBackColor = true;
+            this.btsair.UseVisualStyleBackColor = false;
             this.btsair.Click += new System.EventHandler(this.btsair_Click);
             // 
             // dgvepii
             // 
             this.dgvepii.AllowUserToAddRows = false;
             this.dgvepii.AllowUserToDeleteRows = false;
+            this.dgvepii.BackgroundColor = System.Drawing.Color.White;
             this.dgvepii.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvepii.Location = new System.Drawing.Point(91, 234);
+            this.dgvepii.Location = new System.Drawing.Point(423, 234);
             this.dgvepii.Name = "dgvepii";
             this.dgvepii.ReadOnly = true;
-            this.dgvepii.Size = new System.Drawing.Size(265, 150);
+            this.dgvepii.Size = new System.Drawing.Size(279, 150);
             this.dgvepii.TabIndex = 4;
             // 
             // btnalterar
             // 
-            this.btnalterar.Location = new System.Drawing.Point(578, 415);
+            this.btnalterar.BackColor = System.Drawing.Color.White;
+            this.btnalterar.Location = new System.Drawing.Point(567, 415);
             this.btnalterar.Name = "btnalterar";
-            this.btnalterar.Size = new System.Drawing.Size(138, 23);
+            this.btnalterar.Size = new System.Drawing.Size(135, 23);
             this.btnalterar.TabIndex = 5;
             this.btnalterar.Text = "Alterar";
-            this.btnalterar.UseVisualStyleBackColor = true;
+            this.btnalterar.UseVisualStyleBackColor = false;
             this.btnalterar.Click += new System.EventHandler(this.btnalterar_Click);
             // 
             // dgvexame
             // 
             this.dgvexame.AllowUserToAddRows = false;
             this.dgvexame.AllowUserToDeleteRows = false;
+            this.dgvexame.BackgroundColor = System.Drawing.Color.White;
             this.dgvexame.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvexame.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.dgvexame.Location = new System.Drawing.Point(407, 234);
+            this.dgvexame.Location = new System.Drawing.Point(15, 234);
             this.dgvexame.Name = "dgvexame";
             this.dgvexame.ReadOnly = true;
             this.dgvexame.Size = new System.Drawing.Size(279, 150);
@@ -119,20 +124,21 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(434, 415);
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(15, 415);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 23);
             this.button1.TabIndex = 7;
             this.button1.Text = "Deletar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pesquisa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(832, 461);
+            this.BackColor = System.Drawing.SystemColors.Menu;
+            this.ClientSize = new System.Drawing.Size(714, 461);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvexame);
             this.Controls.Add(this.btnalterar);
@@ -147,7 +153,7 @@
             this.Name = "pesquisa";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Pesquisa";
+            this.Text = "Pesquisar";
             ((System.ComponentModel.ISupportInitialize)(this.dgvpesquisa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvepii)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvexame)).EndInit();
