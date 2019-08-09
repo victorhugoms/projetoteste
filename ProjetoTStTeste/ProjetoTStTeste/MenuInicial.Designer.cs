@@ -57,6 +57,9 @@
             this.adicionarPessoaToolStripMenuItem.Name = "adicionarPessoaToolStripMenuItem";
             this.adicionarPessoaToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.adicionarPessoaToolStripMenuItem.Text = "Menu";
+            this.adicionarPessoaToolStripMenuItem.DropDownOpening += new System.EventHandler(this.adicionarPessoaToolStripMenuItem_DropDownOpening);
+            this.adicionarPessoaToolStripMenuItem.Click += new System.EventHandler(this.adicionarPessoaToolStripMenuItem_Click);
+            this.adicionarPessoaToolStripMenuItem.MouseDown += new System.Windows.Forms.MouseEventHandler(this.adicionarPessoaToolStripMenuItem_MouseDown);
             // 
             // adicionarFuncionarioToolStripMenuItem
             // 
@@ -91,6 +94,7 @@
             this.txtAdm.Size = new System.Drawing.Size(100, 20);
             this.txtAdm.TabIndex = 1;
             this.txtAdm.Visible = false;
+            this.txtAdm.TextChanged += new System.EventHandler(this.txtAdm_TextChanged);
             // 
             // MenuInicial
             // 
@@ -110,6 +114,7 @@
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.MenuInicial_Shown);
+            this.Enter += new System.EventHandler(this.MenuInicial_Enter);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

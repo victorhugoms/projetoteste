@@ -43,8 +43,15 @@ namespace ProjetoTStTeste
                 pes.Id_Turno = Convert.ToInt32(cmbTurno.SelectedValue);
                 pes.Usuario = txtusuario.Text;
                 pes.Senha = txtsenha.Text;
-                pes.Administrador = 1;
 
+                if (pes.Id_Profissao == 6)
+                {
+                    pes.Administrador = 1;
+                }
+                else
+                {
+                    pes.Administrador = 0;
+                }
 
 
                 if (rdbFeminino.Checked)
@@ -139,6 +146,10 @@ namespace ProjetoTStTeste
             cmbTurno.DataSource = pessoas.Turnolista();
             cmbTurno.SelectedValue = 0;
 
+           
+
+           
+
 
         }
 
@@ -167,14 +178,8 @@ namespace ProjetoTStTeste
 
             CadastrarUsuario Usuario = new CadastrarUsuario();
 
-                if (pro.IdProfissao == 6)
-                {
-                    grblogin.Visible = true;
-                }
-                else
-                {
-                    grblogin.Visible = false;
-                }
+            
+              
             
 
         }
@@ -232,6 +237,9 @@ namespace ProjetoTStTeste
         private void Pessoas_Shown(object sender, EventArgs e)
         {
            
+               
+            
+
             if (pessoa_carrega != null)
             {
                 txtId.Text = pessoa_carrega.Id_Funcionario.ToString();
@@ -274,8 +282,9 @@ namespace ProjetoTStTeste
                     dgvTelefone.DataSource = pessoa_carrega.Pesquisatelefone();
                     dgvTelefone.AutoResizeColumns();
                     dgvTelefone.Columns[4].Visible = false;
+                    grblogin.Visible = false;
 
-                    
+
                 }
                 if (pessoa_carrega.Exame == 0)
                 {

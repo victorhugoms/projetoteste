@@ -17,7 +17,8 @@ namespace ProjetoTStTeste
         {
             InitializeComponent();
         }
-       
+
+        public string pesquisatxt;
    
 
         private void txtpesquisa_TextChanged(object sender, EventArgs e)
@@ -66,8 +67,11 @@ namespace ProjetoTStTeste
         private void btnalterar_Click(object sender, EventArgs e)
         {
 
+
             DataGridViewSelectedRowCollection linha = dgvpesquisa.SelectedRows;
+
             
+
 
             if (linha.Count != 1)
             {
@@ -106,10 +110,13 @@ namespace ProjetoTStTeste
 
 
             Cadastro Cadastro = new Cadastro();
+
+           
             Cadastro.pessoa_carrega = pes;
             Cadastro.ShowDialog();
             txtpesquisa_TextChanged(sender, e);
-            
+           
+
 
         }
 
@@ -143,6 +150,15 @@ namespace ProjetoTStTeste
         private void dgvexame_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pesquisa_Shown(object sender, EventArgs e)
+        {
+            if (pesquisatxt == "False")
+            {
+                btnalterar.Enabled = false;
+                button1.Enabled = false;
+            }
         }
     }
 }

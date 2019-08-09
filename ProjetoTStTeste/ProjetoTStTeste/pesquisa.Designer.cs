@@ -154,6 +154,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pesquisar";
+            this.Shown += new System.EventHandler(this.pesquisa_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvpesquisa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvepii)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvexame)).EndInit();

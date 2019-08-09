@@ -40,7 +40,6 @@
             // cmblogin
             // 
             this.cmblogin.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmblogin.Location = new System.Drawing.Point(112, 51);
             this.cmblogin.FormattingEnabled = true;
             this.cmblogin.Location = new System.Drawing.Point(115, 27);
             this.cmblogin.Name = "cmblogin";
@@ -116,6 +115,7 @@
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmlogin_FormClosing);
             this.Load += new System.EventHandler(this.frmlogin_Load);
+            this.Shown += new System.EventHandler(this.frmlogin_Shown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

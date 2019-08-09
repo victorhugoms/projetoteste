@@ -380,7 +380,7 @@ namespace ProjetoTStTeste
             try
             {
                 int exOK = 0;
-                BD._sql = String.Format("UPDATE funcionario SET status_fun = 1 WHERE id_funcionario = {0}", id_Funcionario);
+                BD._sql = String.Format("UPDATE funcionario SET status_fun = 0 WHERE id_funcionario = {0}", id_Funcionario);
 
                 exOK = BD.ExecutaComando(false);
 
@@ -465,7 +465,7 @@ namespace ProjetoTStTeste
 
             try
             {
-                BD._sql = "SELECT id_funcionario, usuario FROM funcionario order by id_funcionario";
+                BD._sql = " SELECT id_funcionario, usuario FROM funcionario Where status_fun = 1 order by id_funcionario  ";
 
                 return BD.ExecutaSelect();
             }

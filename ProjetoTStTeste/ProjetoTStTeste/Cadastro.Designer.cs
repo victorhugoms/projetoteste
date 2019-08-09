@@ -76,10 +76,10 @@
             this.msknascimento = new System.Windows.Forms.MaskedTextBox();
             this.mskCEP = new System.Windows.Forms.MaskedTextBox();
             this.grblogin = new System.Windows.Forms.GroupBox();
-            this.txtusuario = new System.Windows.Forms.TextBox();
-            this.txtsenha = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtsenha = new System.Windows.Forms.TextBox();
+            this.txtusuario = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTelefone)).BeginInit();
@@ -545,21 +545,15 @@
             this.grblogin.TabIndex = 50;
             this.grblogin.TabStop = false;
             this.grblogin.Text = "Login";
-            this.grblogin.Visible = false;
             // 
-            // txtusuario
+            // label18
             // 
-            this.txtusuario.Location = new System.Drawing.Point(81, 26);
-            this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(100, 20);
-            this.txtusuario.TabIndex = 0;
-            // 
-            // txtsenha
-            // 
-            this.txtsenha.Location = new System.Drawing.Point(81, 63);
-            this.txtsenha.Name = "txtsenha";
-            this.txtsenha.Size = new System.Drawing.Size(100, 20);
-            this.txtsenha.TabIndex = 1;
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(34, 66);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(41, 13);
+            this.label18.TabIndex = 3;
+            this.label18.Text = "Senha:";
             // 
             // label17
             // 
@@ -570,14 +564,19 @@
             this.label17.TabIndex = 2;
             this.label17.Text = "Usuário:";
             // 
-            // label18
+            // txtsenha
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(34, 66);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(41, 13);
-            this.label18.TabIndex = 3;
-            this.label18.Text = "Senha:";
+            this.txtsenha.Location = new System.Drawing.Point(81, 63);
+            this.txtsenha.Name = "txtsenha";
+            this.txtsenha.Size = new System.Drawing.Size(100, 20);
+            this.txtsenha.TabIndex = 1;
+            // 
+            // txtusuario
+            // 
+            this.txtusuario.Location = new System.Drawing.Point(81, 26);
+            this.txtusuario.Name = "txtusuario";
+            this.txtusuario.Size = new System.Drawing.Size(100, 20);
+            this.txtusuario.TabIndex = 0;
             // 
             // Cadastro
             // 
@@ -692,10 +691,10 @@
         private System.Windows.Forms.MaskedTextBox msknascimento;
         private System.Windows.Forms.MaskedTextBox mskCEP;
         private System.Windows.Forms.MaskedTextBox mskTel;
-        private System.Windows.Forms.GroupBox grblogin;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TextBox txtsenha;
         private System.Windows.Forms.TextBox txtusuario;
+        public System.Windows.Forms.GroupBox grblogin;
     }
 }

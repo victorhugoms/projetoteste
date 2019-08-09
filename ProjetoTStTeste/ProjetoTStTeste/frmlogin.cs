@@ -24,16 +24,22 @@ namespace ProjetoTStTeste
         private void button1_Click(object sender, EventArgs e)
         {
             Pessoa pes = new Pessoa();
+           
+
             pes.Id_Funcionario = Convert.ToInt32(cmblogin.SelectedValue);
 
             DataTable dt = pes.buscasenha();
+            cmblogin.SelectedValue = 0;
+            senhaok = false;
 
-            
 
-            if(txtSenha.Text == dt.Rows[0]["senha"].ToString())
+
+            if (txtSenha.Text == dt.Rows[0]["senha"].ToString())
             {
                 TextBox txt = (TextBox)Application.OpenForms["MenuInicial"].Controls["txtAdm"];
                 txt.Text = dt.Rows[0]["administrador"].ToString();
+                
+               
 
                 senhaok = true;
                 this.Close();
@@ -57,12 +63,7 @@ namespace ProjetoTStTeste
 
         private void frmlogin_Load(object sender, EventArgs e)
         {
-            Pessoa pes = new Pessoa();
-            cmblogin.DisplayMember = "usuario";
-            cmblogin.ValueMember = "id_funcionario";
-            cmblogin.DataSource = pes.ListaLogin();
-            cmblogin.SelectedValue = 0;
-            senhaok = false;
+        
         }
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e)
@@ -79,6 +80,16 @@ namespace ProjetoTStTeste
             {
                 e.Cancel = true;
             }
+        }
+
+        private void frmlogin_Shown(object sender, EventArgs e)
+        {
+            Pessoa pes = new Pessoa();
+            cmblogin.DisplayMember = "usuario";
+            cmblogin.ValueMember = "id_funcionario";
+            cmblogin.DataSource = pes.ListaLogin();
+            
+            senhaok = false;
         }
     }
 }

@@ -40,7 +40,10 @@ namespace ProjetoTStTeste
 
         private void pesquisaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            
+            frmlogin login = new frmlogin();
+            login.ShowDialog();
+
         }
 
         private void sairToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,6 +51,7 @@ namespace ProjetoTStTeste
             pesquisa ps = new pesquisa();
             //ps.MdiParent = this;
             //ps.WindowState = FormWindowState.Maximized;
+            ps.pesquisatxt = txtAdm.Text;
             ps.Show();
         }
 
@@ -60,10 +64,45 @@ namespace ProjetoTStTeste
 
         private void MenuInicial_Shown(object sender, EventArgs e)
         {
+           
             if (txtAdm.Text == "True")
             {
                 adicionarFuncionarioToolStripMenuItem.Enabled = true;
             }
+            
+        }
+
+        private void txtAdm_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MenuInicial_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adicionarPessoaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void adicionarPessoaToolStripMenuItem_DropDownOpening(object sender, EventArgs e)
+        {
+            if (txtAdm.Text == "True")
+            {
+                adicionarFuncionarioToolStripMenuItem.Enabled = true;
+            }
+            else
+            {
+                adicionarFuncionarioToolStripMenuItem.Enabled = false;
+            }
+
+        }
+
+        private void adicionarPessoaToolStripMenuItem_MouseDown(object sender, MouseEventArgs e)
+        {
+
         }
     }
 }
