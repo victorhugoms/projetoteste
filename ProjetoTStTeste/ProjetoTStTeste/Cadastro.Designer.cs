@@ -514,6 +514,8 @@
             this.mskcpf.Size = new System.Drawing.Size(100, 20);
             this.mskcpf.TabIndex = 47;
             this.mskcpf.TextMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.mskcpf.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskcpf_MaskInputRejected);
+            this.mskcpf.Enter += new System.EventHandler(this.mskcpf_Enter);
             // 
             // msknascimento
             // 
@@ -523,6 +525,8 @@
             this.msknascimento.Size = new System.Drawing.Size(100, 20);
             this.msknascimento.TabIndex = 48;
             this.msknascimento.ValidatingType = typeof(System.DateTime);
+            this.msknascimento.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.msknascimento_MaskInputRejected);
+            this.msknascimento.Enter += new System.EventHandler(this.msknascimento_Enter_1);
             // 
             // mskCEP
             // 
@@ -532,6 +536,8 @@
             this.mskCEP.Name = "mskCEP";
             this.mskCEP.Size = new System.Drawing.Size(100, 20);
             this.mskCEP.TabIndex = 49;
+            this.mskCEP.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.mskCEP_MaskInputRejected);
+            this.mskCEP.Enter += new System.EventHandler(this.mskCEP_Enter);
             // 
             // grblogin
             // 

@@ -84,7 +84,7 @@
             this.sairToolStripMenuItem.Image = global::ProjetoTStTeste.Properties.Resources.Close_icon;
             this.sairToolStripMenuItem.Name = "sairToolStripMenuItem";
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
-            this.sairToolStripMenuItem.Text = "Sair";
+            this.sairToolStripMenuItem.Text = "Logoff";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.pesquisaToolStripMenuItem_Click);
             // 
             // txtAdm

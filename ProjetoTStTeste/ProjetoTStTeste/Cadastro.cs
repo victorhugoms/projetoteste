@@ -443,5 +443,55 @@ namespace ProjetoTStTeste
             
         }
 
+        private void mskcpf_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private delegate void PosicionaCursorDelegate(int posicao);
+
+        private void PosicionaCursor(int posicao)
+        {
+            mskcpf.SelectionStart = posicao;
+        }
+
+        private void mskcpf_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new PosicionaCursorDelegate(PosicionaCursor), new object[] { 0 });
+        }
+
+        private void msknascimento_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private delegate void PosicionaCursorDelegate2(int posicao);
+
+        private void PosicionaCursor2(int posicao)
+        {
+            msknascimento.SelectionStart = posicao;
+        }
+
+        private void msknascimento_Enter_1(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new PosicionaCursorDelegate2(PosicionaCursor2), new object[] { 0 });
+        }
+
+        private void mskCEP_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
+
+        private delegate void PosicionaCursorDelegate3(int posicao);
+
+        private void PosicionaCursor3(int posicao)
+        {
+            mskCEP.SelectionStart = posicao;
+        }
+
+        private void mskCEP_Enter(object sender, EventArgs e)
+        {
+            this.BeginInvoke(new PosicionaCursorDelegate3(PosicionaCursor3), new object[] { 0 });
+        }
     }
 }
