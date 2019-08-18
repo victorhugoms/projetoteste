@@ -26,77 +26,90 @@ namespace ProjetoTStTeste
         {
             if (ValidaCPF(mskcpf.Text))
             {
-               
-                Pessoa pes = new Pessoa();
-
-                pes.Status = 1;
-                pes.Nome = txtNome.Text;
-                pes.Email = txtEmail.Text;
-                pes.Cpf = mskcpf.Text;
-                pes.Dt_nascimento = Convert.ToDateTime(msknascimento.Text);
-                pes.Endereco = txtEndereco.Text;
-                pes.Bairro = txtBairro.Text;
-                pes.Id_Cidade = Convert.ToInt32(cmbCidade.SelectedValue);
-                pes.Id_Estado = Convert.ToInt32(cmbEstado.SelectedValue);
-                pes.Cep = mskCEP.Text;
-                pes.Id_Profissao = Convert.ToInt32(cmbCargo.SelectedValue);
-                pes.Id_Turno = Convert.ToInt32(cmbTurno.SelectedValue);
-                pes.Usuario = txtusuario.Text;
-                pes.Senha = txtsenha.Text;
-
-                if (pes.Id_Profissao == 6)
-                {
-                    pes.Administrador = 1;
-                }
-                else
-                {
-                    pes.Administrador = 0;
-                }
-
-
-                if (rdbFeminino.Checked)
-                {
-                    pes.Sexo = "Feminino";
-                }
-                else
-                {
-                    pes.Sexo = "Masculino";
-                }
-
-                if (rdbEmdia.Checked)
-                {
-                    pes.Exame = 1;
-                }
-                if (rdbPendente.Checked)
-                {
-                    pes.Exame = 0;
-                }
-
-                if (txtId.Text == "")
+                if (msknascimento.Text == "" && txtNome.Text == "")
                 {
 
-                  txtId.Text = Convert.ToString(pes.Adicionar());
-                    
-                    if (dgvTelefone.Rows.Count > 0)
+                    Pessoa pes = new Pessoa();
+
+                    pes.Status = 1;
+                    pes.Nome = txtNome.Text;
+                    pes.Email = txtEmail.Text;
+                    pes.Cpf = mskcpf.Text;
+                    pes.Dt_nascimento = Convert.ToDateTime(msknascimento.Text);
+                    pes.Endereco = txtEndereco.Text;
+                    pes.Bairro = txtBairro.Text;
+                    pes.Id_Cidade = Convert.ToInt32(cmbCidade.SelectedValue);
+                    pes.Id_Estado = Convert.ToInt32(cmbEstado.SelectedValue);
+                    pes.Cep = mskCEP.Text;
+                    pes.Id_Profissao = Convert.ToInt32(cmbCargo.SelectedValue);
+                    pes.Id_Turno = Convert.ToInt32(cmbTurno.SelectedValue);
+                    pes.Usuario = txtusuario.Text;
+                    pes.Senha = txtsenha.Text;
+
+                    if (pes.Id_Profissao == 6)
                     {
-                        
-                                 
-                        SalvaTelefones();
-                        
+                        pes.Administrador = 1;
+                    }
+                    else
+                    {
+                        pes.Administrador = 0;
+                    }
+
+
+                    if (rdbFeminino.Checked)
+                    {
+                        pes.Sexo = "Feminino";
+                    }
+                    else
+                    {
+                        pes.Sexo = "Masculino";
+                    }
+
+                    if (rdbEmdia.Checked)
+                    {
+                        pes.Exame = 1;
+                    }
+                    if (rdbPendente.Checked)
+                    {
+                        pes.Exame = 0;
+                    }
+
+                    if (txtId.Text == "")
+                    {
+
+                        txtId.Text = Convert.ToString(pes.Adicionar());
+
+                        if (dgvTelefone.Rows.Count > 0)
+                        {
+
+
+                            SalvaTelefones();
+                            this.Close();
+
+                        }
+                    }
+                    else
+                    {
+                        pes.Id_Funcionario = Convert.ToInt32(txtId.Text);
+                        pes.Atualizar();
                     }
                 }
                 else
                 {
-                    pes.Id_Funcionario = Convert.ToInt32(txtId.Text);
-                    pes.Atualizar();
+                    MessageBox.Show("data");
                 }
+
+
             }
             else
             {
                 MessageBox.Show("CPF inválido!");
             }
 
-            this.Close();
+                
+            
+
+           
         }
 
         private void SalvaTelefones()
