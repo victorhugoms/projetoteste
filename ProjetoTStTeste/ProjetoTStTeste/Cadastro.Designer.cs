@@ -93,18 +93,18 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(92, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nome Completo:";
+            this.label1.Text = "Nome Completo: *";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(2, 98);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 13);
+            this.label2.Size = new System.Drawing.Size(34, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "CPF:";
+            this.label2.Text = "CPF:*";
             // 
             // txtNome
             // 
@@ -118,9 +118,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(236, 49);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(38, 13);
+            this.label3.Size = new System.Drawing.Size(45, 13);
             this.label3.TabIndex = 4;
-            this.label3.Text = "E-mail:";
+            this.label3.Text = "E-mail: *";
             // 
             // txtEmail
             // 
