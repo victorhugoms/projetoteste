@@ -26,7 +26,7 @@ namespace ProjetoTStTeste
         {
             if (ValidaCPF(mskcpf.Text))
             {
-                if (msknascimento.Text == "" && txtNome.Text == "")
+                if (msknascimento.Text != "" && txtNome.Text != "")
                 {
 
                     Pessoa pes = new Pessoa();
